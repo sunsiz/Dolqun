@@ -28,49 +28,151 @@
                 <a class="navbar-brand" href="#">Brand</a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
+                    @auth()
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Separated link</a></li>
+                            </ul>
+                        </li>
+                    @else
+                        <li><a href="#">كىرىش</a></li>
+                        <li><a href="#">تېزىملىتىش</a></li>
+                    @endauth
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
     <div class="container">
-        <h1>你好，世界！</h1>
-        <button class="btn btn-success">دولقۇن</button>
+        <div class="home-top-area">
+            <div class="logo-area">
+                <div id="logo">
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('./images/logo.png') }}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="slider-area">
+                <img src="{{ asset('./images/Slam-Dunk.jpg') }}" alt="">
+            </div>
+        </div>
+        <div class="row main-area">
+            <div class="col-md-9 right-area">
+                <div class="video-list">
+                    <ul>
+                        <li>
+                            <div class="row">
+                                <div class="col-md-3 video-img">
+                                    <a href="#">
+                                        <img src="{{ asset('./images/Slam-Dunk.jpg') }}" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-9">
+                                    <a href="#">
+                                        <h3>نارۇتو Naruto/火影忍者 </h3>
+                                    </a>
+                                    <div class="video-star">
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span class="video-star">9.0</span>
+                                    </div>
+                                    <p>
+                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-md-3 video-img">
+                                    <a href="#">
+                                        <img src="{{ asset('./images/2.jpeg') }}" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-9">
+                                    <a href="#">
+                                        <h3>نارۇتو Naruto/火影忍者 </h3>
+                                    </a>
+                                    <div class="video-star">
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span class="video-star">9.0</span>
+                                    </div>
+                                    <p>
+                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-md-3 video-img">
+                                    <a href="#">
+                                        <img src="{{ asset('./images/1.jpeg') }}" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-9">
+                                    <a href="#">
+                                        <h3>نارۇتو Naruto/火影忍者 </h3>
+                                    </a>
+                                    <div class="video-star">
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span class="video-star">9.0</span>
+                                    </div>
+                                    <p>
+                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-md-3 video-img">
+                                    <a href="#">
+                                        <img src="{{ asset('./images/3.jpeg') }}" alt="">
+                                    </a>
+                                </div>
+                                <div class="col-md-9">
+                                    <a href="#">
+                                        <h3>نارۇتو Naruto/火影忍者 </h3>
+                                    </a>
+                                    <div class="video-star">
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span class="video-star">9.0</span>
+                                    </div>
+                                    <p>
+                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 left-area">
+                grgr
+            </div>
+        </div>
     </div>
 
     <script src="{{ mix('js/app.js') }}"></script>
