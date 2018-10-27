@@ -3552,13 +3552,8 @@ body {
   color: #2d8cf0;
 }
 
-.video-list {
-  width: 100%;
-}
-
 .video-list li {
   float: right;
-  height: 220px;
   background: #fff;
   margin-bottom: 30px;
   border-radius: 5px;
@@ -3577,15 +3572,14 @@ body {
 }
 
 .video-list li .video-img {
-  height: 100%;
+  padding-right: 15px;
 }
 
 .video-list li .video-img img {
-  margin: 20px;
+  margin: 15px;
   display: block;
-  height: 180px;
-  width: 160px;
   border-radius: 5px;
+  max-height: 260px;
 }
 
 .video-list li h3 {

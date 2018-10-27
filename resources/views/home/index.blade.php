@@ -73,7 +73,7 @@
             </div>
         </div>
         <div class="row main-area">
-            <div class="col-md-8 right-area">
+            <div class="col-md-8 col-xs-12 right-area">
                 <div class="video-list">
                     <div class="area-title">
                         <h3>يېڭى يوللانغانلار</h3>
@@ -81,37 +81,12 @@
                     <ul>
                         <li>
                             <div class="row">
-                                <div class="col-md-3 video-img">
+                                <div class="col-md-3 col-sm-3 col-xs-12 video-img">
                                     <a href="#">
-                                        <img src="{{ asset('./images/Slam-Dunk.jpg') }}" alt="">
+                                        <img src="{{ asset('./images/3.jpeg') }}" alt="" class="img-responsive">
                                     </a>
                                 </div>
-                                <div class="col-md-9">
-                                    <a href="#">
-                                        <h3>نارۇتو Naruto/火影忍者 </h3>
-                                    </a>
-                                    <div class="video-star">
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span class="video-star">9.0</span>
-                                    </div>
-                                    <p>
-                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-3 video-img">
-                                    <a href="#">
-                                        <img src="{{ asset('./images/2.jpeg') }}" alt="">
-                                    </a>
-                                </div>
-                                <div class="col-md-9">
+                                <div class="col-md-9 col-sm-9 col-xs-12">
                                     <a href="#">
                                         <h3>نارۇتو Naruto/火影忍者 </h3>
                                     </a>
@@ -131,12 +106,12 @@
                         </li>
                         <li>
                             <div class="row">
-                                <div class="col-md-3 video-img">
+                                <div class="col-md-3 col-sm-3 col-xs-12 video-img">
                                     <a href="#">
-                                        <img src="{{ asset('./images/1.jpeg') }}" alt="">
+                                        <img src="{{ asset('./images/2.jpeg') }}" alt="" class="img-responsive">
                                     </a>
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-9 col-sm-9 col-xs-12 ">
                                     <a href="#">
                                         <h3>نارۇتو Naruto/火影忍者 </h3>
                                     </a>
@@ -156,12 +131,37 @@
                         </li>
                         <li>
                             <div class="row">
-                                <div class="col-md-3 video-img">
+                                <div class="col-md-3 col-sm-3 col-xs-12  video-img">
                                     <a href="#">
-                                        <img src="{{ asset('./images/3.jpeg') }}" alt="">
+                                        <img src="{{ asset('./images/1.jpeg') }}" alt="" class="img-responsive">
                                     </a>
                                 </div>
-                                <div class="col-md-9">
+                                <div class="col-md-9 col-sm-9 col-xs-12 ">
+                                    <a href="#">
+                                        <h3>نارۇتو Naruto/火影忍者 </h3>
+                                    </a>
+                                    <div class="video-star">
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span class="color-warning"><i class="fa fa-star"></i></span>
+                                        <span><i class="fa fa-star"></i></span>
+                                        <span class="video-star">9.0</span>
+                                    </div>
+                                    <p>
+                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
+                                    </p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="row">
+                                <div class="col-md-3 col-sm-3 col-xs-12 video-img">
+                                    <a href="#">
+                                        <img src="{{ asset('./images/3.jpeg') }}" alt="" class="img-responsive">
+                                    </a>
+                                </div>
+                                <div class="col-md-9 col-sm-9 col-xs-12 ">
                                     <a href="#">
                                         <h3>نارۇتو Naruto/火影忍者 </h3>
                                     </a>
