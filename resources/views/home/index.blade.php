@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -25,10 +25,20 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('./images/logo-icon.png') }}" alt="">
+                </a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{{ route('home') }}"> باشبەت<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">فىلغەت</a></li>
+                    <li><a href="#">مۇنازىرە</a></li>
+
+                </ul>
+
                 <ul class="nav navbar-nav navbar-right">
                     @auth()
                         <li class="dropdown">
@@ -63,8 +73,11 @@
             </div>
         </div>
         <div class="row main-area">
-            <div class="col-md-9 right-area">
+            <div class="col-md-8 right-area">
                 <div class="video-list">
+                    <div class="area-title">
+                        <h3>يېڭى يوللانغانلار</h3>
+                    </div>
                     <ul>
                         <li>
                             <div class="row">
@@ -167,10 +180,27 @@
                             </div>
                         </li>
                     </ul>
+                    <div class="load-more">
+                        <button class="btn btn-outline-primary" style="margin: 0 auto;display: block">تېخىمۇ كۆپ ...</button>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-3 left-area">
-                grgr
+            <div class="col-md-4 left-area">
+                <div class="tags-area">
+                    <div class="area-title">
+                        <h3>ئاۋات خەتكۈچلەر</h3>
+                    </div>
+                    <div class="tags-list">
+                        <a href="#" class="btn btn-primary"><span>كورۇكۇنىڭ ۋاسكېتبولى</span></a>
+                        <a href="#" class="btn btn-warning"><span>ناروتۇ</span></a>
+                        <a href="#" class="btn btn-success"><span>ئ‍اۋاتار</span></a>
+                        <a href="#" class="btn btn-warning"><span>خەتلىك فىلىم</span></a>
+                        <a href="#" class="btn btn-pink"><span>تېخنىكا</span></a>
+                        <a href="#" class="btn btn-purple"><span>چۈشۈرۈلمىلەر</span></a>
+                        <a href="#" class="btn btn-custom"><span>ئەپ دېتال</span></a>
+                        <a href="#" class="btn btn-info"><span>VIP ئەزالىق</span></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
