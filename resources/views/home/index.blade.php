@@ -35,8 +35,8 @@
 
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ route('home') }}"> باشبەت<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">قامۇس</a></li>
                     <li><a href="#">فىلغەت</a></li>
-                    <li><a href="#">مۇنازىرە</a></li>
 
                 </ul>
 
@@ -70,7 +70,11 @@
                 </div>
             </div>
             <div class="slider-area">
-                <img src="{{ asset('./images/Slam-Dunk.jpg') }}" alt="">
+                <ul>
+                    <li><img src="{{ asset('./images/Slam-Dunk.jpg') }}" alt=""></li>
+                    <li><img src="{{ asset('./images/12.jpeg') }}" alt=""></li>
+                    <li><img src="{{ asset('./images/heizi.jpeg') }}" alt=""></li>
+                </ul>
             </div>
         </div>
         <div class="row main-area">
@@ -88,20 +92,32 @@
                                     </a>
                                 </div>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <a href="#">
-                                        <h3>نارۇتو Naruto/火影忍者 </h3>
-                                    </a>
-                                    <div class="video-star">
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span class="video-star">9.0</span>
+                                    <div class="video-content">
+                                        <a href="#">
+                                            <h3>نارۇتو Naruto/火影忍者 </h3>
+                                        </a>
+                                        <div class="video-star">
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span><i class="fa fa-star"></i></span>
+                                            <span class="video-star">9.0</span>
+                                        </div>
+                                        <p>
+                                            بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
+                                        </p>
+                                        <div class="video-infos">
+                                            <span>
+                                                <i class="fa fa-clock-o"></i>
+                                                2 مىنۇت بۇرۇن
+                                            </span>
+                                            <span>
+                                                <i class="fa fa-eye"></i>
+                                                45
+                                            </span>
+                                        </div>
                                     </div>
-                                    <p>
-                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
-                                    </p>
                                 </div>
                             </div>
                         </li>
@@ -112,21 +128,33 @@
                                         <img src="{{ asset('./images/2.jpeg') }}" alt="" class="img-responsive">
                                     </a>
                                 </div>
-                                <div class="col-md-9 col-sm-9 col-xs-12 ">
-                                    <a href="#">
-                                        <h3>نارۇتو Naruto/火影忍者 </h3>
-                                    </a>
-                                    <div class="video-star">
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span class="video-star">9.0</span>
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <div class="video-content">
+                                        <a href="#">
+                                            <h3>نارۇتو Naruto/火影忍者 </h3>
+                                        </a>
+                                        <div class="video-star">
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span><i class="fa fa-star"></i></span>
+                                            <span class="video-star">9.0</span>
+                                        </div>
+                                        <p>
+                                            بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
+                                        </p>
+                                        <div class="video-infos">
+                                            <span>
+                                                <i class="fa fa-clock-o"></i>
+                                                2 مىنۇت بۇرۇن
+                                            </span>
+                                            <span>
+                                                <i class="fa fa-eye"></i>
+                                                45
+                                            </span>
+                                        </div>
                                     </div>
-                                    <p>
-                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
-                                    </p>
                                 </div>
                             </div>
                         </li>
@@ -137,21 +165,33 @@
                                         <img src="{{ asset('./images/1.jpeg') }}" alt="" class="img-responsive">
                                     </a>
                                 </div>
-                                <div class="col-md-9 col-sm-9 col-xs-12 ">
-                                    <a href="#">
-                                        <h3>نارۇتو Naruto/火影忍者 </h3>
-                                    </a>
-                                    <div class="video-star">
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span class="video-star">9.0</span>
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <div class="video-content">
+                                        <a href="#">
+                                            <h3>نارۇتو Naruto/火影忍者 </h3>
+                                        </a>
+                                        <div class="video-star">
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span><i class="fa fa-star"></i></span>
+                                            <span class="video-star">9.0</span>
+                                        </div>
+                                        <p>
+                                            بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
+                                        </p>
+                                        <div class="video-infos">
+                                            <span>
+                                                <i class="fa fa-clock-o"></i>
+                                                2 مىنۇت بۇرۇن
+                                            </span>
+                                            <span>
+                                                <i class="fa fa-eye"></i>
+                                                45
+                                            </span>
+                                        </div>
                                     </div>
-                                    <p>
-                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
-                                    </p>
                                 </div>
                             </div>
                         </li>
@@ -162,21 +202,33 @@
                                         <img src="{{ asset('./images/3.jpeg') }}" alt="" class="img-responsive">
                                     </a>
                                 </div>
-                                <div class="col-md-9 col-sm-9 col-xs-12 ">
-                                    <a href="#">
-                                        <h3>نارۇتو Naruto/火影忍者 </h3>
-                                    </a>
-                                    <div class="video-star">
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span class="color-warning"><i class="fa fa-star"></i></span>
-                                        <span><i class="fa fa-star"></i></span>
-                                        <span class="video-star">9.0</span>
+                                <div class="col-md-9 col-sm-9 col-xs-12">
+                                    <div class="video-content">
+                                        <a href="#">
+                                            <h3>نارۇتو Naruto/火影忍者 </h3>
+                                        </a>
+                                        <div class="video-star">
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span class="color-warning"><i class="fa fa-star"></i></span>
+                                            <span><i class="fa fa-star"></i></span>
+                                            <span class="video-star">9.0</span>
+                                        </div>
+                                        <p>
+                                            بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
+                                        </p>
+                                        <div class="video-infos">
+                                            <span>
+                                                <i class="fa fa-clock-o"></i>
+                                                2 مىنۇت بۇرۇن
+                                            </span>
+                                            <span>
+                                                <i class="fa fa-eye"></i>
+                                                45
+                                            </span>
+                                        </div>
                                     </div>
-                                    <p>
-                                        بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
-                                    </p>
                                 </div>
                             </div>
                         </li>
@@ -187,6 +239,31 @@
                 </div>
             </div>
             <div class="col-md-4 left-area">
+                <div class="hot-photos-area">
+                    <div class="area-title">
+                        <h3>ئۇز رەسىم</h3>
+                    </div>
+                    <div class="hot-photos-list">
+                        <div class="photos-list-item">
+                            <a href="#">
+                                <img src="{{ asset('./images/12.jpeg') }}" alt="" class="img-responsive">
+                            </a>
+                            <a href="#"><h3>ناروتۇ/火影忍者</h3></a>
+                        </div>
+                        <div class="photos-list-item">
+                            <a href="#">
+                                <img src="{{ asset('./images/heizi.jpeg') }}" alt="" class="img-responsive">
+                            </a>
+                            <a href="#"><h3>كوروكۇنىڭ ۋاسكېتبولى/黑子的篮球</h3></a>
+                        </div>
+                        <div class="photos-list-item">
+                            <a href="#">
+                                <img src="{{ asset('./images/yixiu.jpeg') }}" alt="" class="img-responsive">
+                            </a>
+                            <a href="#"><h3>ناروتۇ/火影忍者</h3></a>
+                        </div>
+                    </div>
+                </div>
                 <div class="tags-area">
                     <div class="area-title">
                         <h3>ئاۋات خەتكۈچلەر</h3>

@@ -67,10 +67,11 @@ body {
   color: rgba(49, 58, 70, 0.7);
 }
 .home-top-area {
-  height: 480px;
+  height: 580px;
   position: relative;
   overflow: hidden;
   border-radius: 5px;
+  background: red;
 }
 .logo-area {
   width: 100%;
@@ -94,17 +95,23 @@ body {
 
 .slider-area {
   width: 100%;
-  height: 360px;
+  height: 460px;
   position: absolute;
   top: 150px;
   right: 0;
   overflow: hidden;
+  li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    img {
+      width: 100%;
+      max-height: 100%;
+    }
+  }
 }
-.slider-area img{
-  width: 100%;
-  max-height: 100%;
-}
-
 /*video-list*/
 .main-area {
   margin-top: 40px;
@@ -120,6 +127,24 @@ body {
   }
 }
 .video-list {
+  .video-content {
+    padding: 15px;
+    overflow: hidden;
+    p {
+      font-size: 12px;
+    }
+    .video-infos {
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      margin-top: 30px;
+      span {
+        color: #98a6ad;
+        float: right;
+        margin-left: 20px;
+      }
+    }
+  }
 }
 .video-list li {
   float: right;
@@ -135,6 +160,9 @@ body {
     -webkit-transform:translate3d(0, -2px, 0);
     transform:translate3d(0, -2px, 0);
     cursor: default;
+    a {
+      color: $primaryColor;
+    }
   }
 }
 .video-list li .video-img{
@@ -144,14 +172,14 @@ body {
   margin: 15px;
   display: block;
   border-radius: 5px;
-  max-height: 260px;
+  max-height: 200px;
 }
 .video-list li h3 {
   height: 30px;
   line-height: 30px;
-  margin:40px 0 0 0;
   font-size: 16px;
   font-weight: normal;
+  margin:15px 0 0 0;
 }
 .video-list li a {
   color: #000;
@@ -164,10 +192,11 @@ body {
   height: 30px;
   line-height: 30px;
   width: 100%;
-  margin:0 0 40px 0;
+  margin:0 0 20px 0;
 }
 .video-list li .video-star span{
   padding: 0 2px;
+  font-size: 12px;
 }
 
 //tags-list
@@ -177,4 +206,40 @@ body {
   padding: 6px 6px;
   font-size: 10px;
   color: #fff;
+}
+
+.hot-photos-list h3 {
+  font-size: 14px;
+}
+.photos-list-item {
+  background: #fff;
+  padding-bottom: 4px;
+  transition: all 0.2s linear 0s;
+  position: relative;
+  margin-bottom: 20px;
+  &:hover {
+    background: #fff;
+    -webkit-box-shadow:0 5px 7px rgba(0,0,0,0.1);
+    box-shadow:0 5px 7px rgba(0,0,0,0.1);
+    -webkit-transform:translate3d(0, -2px, 0);
+    transform:translate3d(0, -2px, 0);
+    cursor: default;
+    a {
+      color: $primaryColor;
+    }
+  }
+  img {
+    max-height: 180px;
+    width: 100%;
+  }
+  h3 {
+    margin:10px 0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    text-align: center;
+  }
+  a{
+    color: rgba(49, 58, 70, 0.7);
+  }
 }
