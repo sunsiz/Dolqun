@@ -1,0 +1,143 @@
+.dropdown-menu {
+  border: none;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.dropdown-menu>li>a {
+  padding: 10px 20px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+}
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+  color: $costumColor;
+  text-decoration: none;
+  background-color: #fff;
+}
+.dropdown-menu > li > a {
+  color: rgba(49, 58, 70, 0.7);
+}
+.list-group-item {
+  border:none;
+  border-radius: 0;
+  padding: 15px;
+  margin: 0;
+}
+.list-group-item:first-child {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+  background-color: $costumColor;
+  border-color: $costumColor;
+}
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+  color: $costumColor;
+  background-color: #fff;
+}
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: none;
+}
+.panel-default {
+  border-color: #fff;
+}
+.panel-default>.panel-heading {
+  margin:15px;
+  color: #333;
+  background-color: #fff;
+  border-bottom: 1px solid $bgColor;
+  padding:5px 0;
+}
+
+.form-control {
+  border: 1px solid #f3f3f3;
+  border-radius: 3px;
+  box-shadow: none;
+  padding: 20px 12px;
+}
+
+.form-control:focus {
+  border-color: $primaryColor;
+  box-shadow: none;
+}
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: #e3eaef;
+}
+
+//texts
+.text-muted {
+  color: #98a6ad !important;
+}
+.text-pink {
+  color: #ff679b !important;
+}
+.text-custom {
+  color: #02c0ce !important;
+}
+.text-danger {
+  color: #f1556c !important;
+}
+.text-primary {
+  color: #2d7bf4 !important;
+}
+.text-success {
+  color: #0acf97 !important;
+}
+.text-dark {
+  color: #212529;
+}
+//alerts
+
+//errors
+.has-error .form-control {
+  border-color: #f1556c;
+}
+
+//tabs
+.nav-tabs {
+  border-bottom: 2px solid rgba(152, 166, 173, 0.2) !important;
+}
+.nav-tabs>li>a {
+  border: none;
+  color: #98a6ad;
+}
+.nav-tabs>li>a:hover {
+  border:none;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: #fff;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  background-color: #fff;
+  border: none;
+  border-bottom: 2px solid #02c0ce !important;
+}
+
+.label {
+  display: inline;
+  padding: 4px 6px;
+  font-size: 75%;
+  font-weight: normal;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 3px;
+}
+pre, code {
+  background-color: #f6f8fa;
+  border: none;
+  direction: ltr;
+  line-height: 25px;
+  padding: 10px;
+}
