@@ -48,7 +48,7 @@
                             <img src="{{ asset(Auth::user()->avatar) }}" alt="" class="img-circle" height="18">
                         </a>
                         <ul class="dropdown-menu">
-                            {{--<li><a href="{{ route('user.show', Auth::user()->id) }}"><i class="fa fa-user"></i> ئەزا مەركىزى</a></li>--}}
+                            <li><a href="{{ route('user.show', Auth::user()->id) }}"><i class="fa fa-user"></i> ئەزا مەركىزى</a></li>
                             {{--<li><a href="{{ route('user.edit', Auth::user()->id) }}"><i class="fa fa-edit"></i> ئەزا تەڭشىكى</a></li>--}}
                             <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> بېخەتەر چىكىنىش</a></li>
                         </ul>
@@ -66,7 +66,9 @@
         <div class="col-md-12">
             @include('layouts.messages')
         </div>
-        @yield('content')
+        <div class="col-md-12">
+            @yield('content')
+        </div>
     </div>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>

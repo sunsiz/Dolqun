@@ -24,4 +24,8 @@ Route::namespace('Home')->group(function () {
     Route::post('register', 'RegisterController@store')->name('register');
     //注册激活账户
     Route::get('register/confirmEmail/{token}', 'RegisterController@confirmEmail')->name('confirmEmail');
+
+    //用户
+    Route::resource('user', 'UserController');
+
 });

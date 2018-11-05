@@ -8,6 +8,14 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('guest', [
+            'only' => ['create']
+        ]);
+    }
+
     public function create()
     {
         return view('users.login');
@@ -22,7 +30,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials, $request->remember)) {
 
-            if(Auth::user()->is_activated) {
+            if (Auth::user()->is_activated) {
 
                 //每天登陆增加经验值
                 //$this->setExp(Auth::user()->id);
@@ -36,7 +44,7 @@ class LoginController extends Controller
                 return redirect()->back();
             }
 
-        }else{
+        } else {
             session()->flash('danger', 'ئېلخەت ياكى پارول خاتا');
             return redirect()->back()->withInput();
         }
