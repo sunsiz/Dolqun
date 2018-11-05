@@ -28,4 +28,16 @@ Route::namespace('Home')->group(function () {
     //用户
     Route::resource('user', 'UserController');
 
+    Route::get('user/{user}/avatar', 'UserController@avatar')->name('user.avatar');
+    Route::post('avatar', 'UserController@avatarStore')->name('user.setAvatar');
+    Route::post('post_thumb', 'PostController@thumbStore')->name('post.thumb');
+    Route::get('user/{user}/password', 'UserController@password')->name('user.password');
+    Route::post('user/{user}/password', 'UserController@setPassword')->name('user.setPassword');
+
+    //文章
+    Route::resource('posts', 'PostController');
+
+    //标签
+    Route::resource('tag', 'TagController');
+
 });
