@@ -23,4 +23,9 @@ class UserPolicy
     {
         return $user->is_admin;
     }
+
+    public function update(User $currentUser, User $user)
+    {
+        return $currentUser->id === $user->id;
+    }
 }
