@@ -36,8 +36,9 @@ Route::namespace('Home')->group(function () {
 
     //文章
     Route::resource('posts', 'PostController');
+    Route::post('posts/new', 'PostController@new')->name('posts.new');
 
     //标签
-    Route::resource('tag', 'TagController');
+    //Route::resource('tag', 'TagController');
 
 });
