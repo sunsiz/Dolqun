@@ -58,9 +58,10 @@
                                 <img src="{{ asset(Auth::user()->avatar) }}" alt="" class="img-circle" height="18">
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="{{ route('user.show', Auth::user()->id) }}"><i class="fa fa-user"></i> ئەزا
-                                        مەركىزى</a></li>
-                                {{--<li><a href="{{ route('user.edit', Auth::user()->id) }}"><i class="fa fa-edit"></i> ئەزا تەڭشىكى</a></li>--}}
+                                @can('is_admin', $user)
+                                    <li><a href="{{ route('user.show', Auth::user()->id) }}"><i class="fa fa-cog"></i> سىستېما باشقۇرۇش</a></li>
+                                @endcan
+                                <li><a href="{{ route('user.edit', Auth::user()->id) }}"><i class="fa fa-edit"></i> ئ‍اكونت تەڭشىكى</a></li>
                                 <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> بېخەتەر چىكىنىش</a>
                                 </li>
                             </ul>

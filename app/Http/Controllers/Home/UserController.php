@@ -61,4 +61,33 @@ class UserController extends Controller
 
         return response()->json(['url' => '/avatars/'.$filename]);
     }
+
+    public function password(User $user)
+    {
+        return view('users.password', compact('user'));
+    }
+
+    public function setPassword(Request $request, User $user)
+    {
+        $data = $this->validate($request, [
+            'password' => 'nullable|confirmed|min:6'
+        ]);
+
+        $this->authorize('update', $user);
+
+        //当有密码修改时才验证
+        if ($request->password) {
+            $data['password'] = bcrypt($request->password);
+
+            $user->update($data);
+
+            session()->flash('success', 'پارول ئۆزگەرتىش غەلبىلىك بولدى');
+            return redirect()->back();
+
+        }
+
+        session()->flash('warning', 'ھىچقانداق ئۆزگەرتىش ئىلىپ بارمىدىڭىز');
+        return redirect()->back();
+
+    }
 }

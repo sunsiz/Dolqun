@@ -30,11 +30,11 @@
   border-top-right-radius: 0px;
 }
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
-  background-color: $costumColor;
-  border-color: $costumColor;
+  background-color: $primaryColor;
+  border-color: $primaryColor;
 }
 a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
-  color: $costumColor;
+  color: $primaryColor;
   background-color: #fff;
 }
 .panel {

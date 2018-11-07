@@ -3457,15 +3457,15 @@ a:hover {
 .list-group-item.active,
 .list-group-item.active:focus,
 .list-group-item.active:hover {
-  background-color: #02c0ce;
-  border-color: #02c0ce;
+  background-color: #2d8cf0;
+  border-color: #2d8cf0;
 }
 
 a.list-group-item:focus,
 a.list-group-item:hover,
 button.list-group-item:focus,
 button.list-group-item:hover {
-  color: #02c0ce;
+  color: #2d8cf0;
   background-color: #fff;
 }
 
