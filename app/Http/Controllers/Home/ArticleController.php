@@ -24,6 +24,14 @@ class ArticleController extends Controller
         return view('posts.index', compact('posts'));
     }
 
+    public function show($id)
+    {
+        $post = Post::where(['id' => $id, 'status' => 1])->firstOrFail();
+        $post->increment('clicks');
+
+        return view('posts.show', compact('post'));
+    }
+
     public function store(PostRequest $request)
     {
         Post::create([
