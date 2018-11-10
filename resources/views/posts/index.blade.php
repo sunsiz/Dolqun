@@ -35,6 +35,7 @@
                         </table>
                     </div>
                 </div>
+                {{  $posts->render() }}
             </div>
         </div>
     </div>

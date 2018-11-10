@@ -25,17 +25,18 @@
                         <h3>يېڭى يوللانغانلار</h3>
                     </div>
                     <ul>
+                        @foreach( $posts as  $post)
                         <li>
                             <div class="row">
                                 <div class="col-md-4 col-sm-4 col-xs-12 video-img">
                                     <a href="#">
-                                        <img src="http://old.learnfans.com/uploads/20170831233018993.png" alt="" class="img-responsive">
+                                        <img src="{{ asset($post->thumb) }}" alt="" class="img-responsive">
                                     </a>
                                 </div>
                                 <div class="col-md-8 col-sm-8 col-xs-12">
                                     <div class="video-content">
                                         <a href="#">
-                                            <h3>نارۇتو Naruto/火影忍者 </h3>
+                                            <h3>{{ $post->title }}</h3>
                                         </a>
                                         <div class="video-star">
                                             <span class="color-warning"><i class="fa fa-star"></i></span>
@@ -45,60 +46,22 @@
                                             <span><i class="fa fa-star"></i></span>
                                             <span class="video-star">9.0</span>
                                         </div>
-                                        <p>
-                                            بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
-                                        </p>
+                                        <p>{{ $post->description }}</p>
                                         <div class="video-info">
                                             <span>
                                                 <i class="fa fa-clock-o"></i>
-                                                2 مىنۇت بۇرۇن
+                                                {{ Date::parse($post->created_at)->diffForHumans(Date::now()) }}
                                             </span>
                                             <span>
                                                 <i class="fa fa-eye"></i>
-                                                45
+                                                {{ $post->clicks }}
                                             </span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </li>
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 col-xs-12 video-img">
-                                    <a href="#">
-                                        <img src="http://old.learnfans.com/uploads/20180105174040984.jpg" alt="" class="img-responsive">
-                                    </a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 col-xs-12">
-                                    <div class="video-content">
-                                        <a href="#">
-                                            <h3>نارۇتو Naruto/火影忍者 </h3>
-                                        </a>
-                                        <div class="video-star">
-                                            <span class="color-warning"><i class="fa fa-star"></i></span>
-                                            <span class="color-warning"><i class="fa fa-star"></i></span>
-                                            <span class="color-warning"><i class="fa fa-star"></i></span>
-                                            <span class="color-warning"><i class="fa fa-star"></i></span>
-                                            <span><i class="fa fa-star"></i></span>
-                                            <span class="video-star">9.0</span>
-                                        </div>
-                                        <p>
-                                            بۇيىل 3- ئايدا Let's Encrypt ئورگان تەرەپ كۆپ دەرىجىلىك تورنامى (泛域名) گە بولغان قوللاشنى ئېلان قىلدى . دىمەك شۇنىڭدىن كىيىن بىرلا SSL ئىجازەتنامىسىنى كۆپ قاتلاملىق تور نامىغا قوللىنىش شىرىن ئارزۇيىمىز ئەمەلگە ئاشتى .
-                                        </p>
-                                        <div class="video-info">
-                                            <span>
-                                                <i class="fa fa-clock-o"></i>
-                                                2 مىنۇت بۇرۇن
-                                            </span>
-                                            <span>
-                                                <i class="fa fa-eye"></i>
-                                                45
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        @endforeach
                     </ul>
                     <div class="load-more">
                         <button class="btn btn-outline-primary" style="margin: 0 auto;display: block">تېخىمۇ كۆپ ...</button>

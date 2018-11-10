@@ -13,7 +13,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">يازما يوللاش</div>
                     <div class="panel-body">
-                        <form action="{{ route('posts.new') }}" method="post">
+                        <form action="{{ route('articles.store') }}" method="post">
                             {{ csrf_field() }}
                             <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                                 <input type="text" class="form-control"  placeholder="ماۋزۇ (چوقۇم يازىسىز)" name="title">
@@ -23,14 +23,9 @@
                                     </span>
                                 @endif
                             </div>
-                            {{--<div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">--}}
-                                {{--<input type="text" class="form-control"  placeholder="ئۇلانما (چوقۇم يازىسىز)" name="slug">--}}
-                                {{--@if ($errors->has('slug'))--}}
-                                    {{--<span class="text-danger">--}}
-                            {{--<strong>{{ $errors->first('slug') }}</strong>--}}
-                        {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
+                            <div class="form-group {{ $errors->has('slug') ? 'has-error' : '' }}">
+                                <thumb avatar="{{ asset(Auth::user()->avatar) }}"></thumb>
+                            </div>
                             {{--<div class="form-group">--}}
                                 {{--@foreach($tags as $tag)--}}
                                     {{--<label class="checkbox-inline">--}}
