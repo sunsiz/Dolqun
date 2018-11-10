@@ -44,8 +44,8 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="{{ route('home') }}"> باشبەت<span class="sr-only">(current)</span></a>
                     </li>
-                    <li><a href="#">قامۇس</a></li>
-                    <li><a href="#">فىلغەت</a></li>
+                    {{--<li><a href="#">قامۇس</a></li>--}}
+                    {{--<li><a href="#">فىلغەت</a></li>--}}
 
                 </ul>
 
