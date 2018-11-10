@@ -50,7 +50,7 @@
                                         <div class="video-info">
                                             <span>
                                                 <i class="fa fa-clock-o"></i>
-                                                {{ Date::parse($post->created_at)->diffForHumans(Date::now()) }}1
+                                                {{ Date::parse($post->created_at)->diffForHumans(Date::now()) }}
                                             </span>
                                             <span>
                                                 <i class="fa fa-eye"></i>
