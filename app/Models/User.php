@@ -36,6 +36,7 @@ class User extends Authenticatable
 
         static::creating(function ($user){
             $user->activation_token = str_random(80);
+            $user->is_activated = true;
         });
     }
 }
