@@ -17,8 +17,9 @@ class CreateFilghetsTable extends Migration
             $table->increments('id');
             $table->string('ug')->index()->commit('维吾尔语简称');
             $table->string('zh')->index()->commit('中文简称');
-            $table->string('other')->commit('其他语言');
-            $table->string('description')->commit('备注');
+            $table->string('other')->nullable()->commit('其他语言');
+            $table->text('description')->commit('备注');
+            $table->boolean('is_deleted')->default(false)->commit('是否删除');
             $table->timestamps();
         });
     }
