@@ -11,14 +11,17 @@
             </div>
             <div class="col-md-9 mt25">
                 <div class="panel panel-default">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation"><a href="{{ route('posts.create') }}">ئادەتتىكى مەزمۇن</a></li>
-                        <li role="presentation" class="active"><a href="{{ route('qamus.create') }}" >قامۇس</a></li>
-                        <li role="presentation"><a href="{{ route('filghetes.create') }}">فىلغەت</a></li>
-                        <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">رەسىم</a></li>
-                    </ul>
+
                     <div class="panel-body">
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="{{ route('posts.create') }}"><i class="fa fa-align-center"></i> مەزمۇن</a></li>
+                            <li role="presentation"><a href="{{ route('filghetes.create') }}"><i class="fa fa-language"></i> فىلغەت</a></li>
+                            <li role="presentation" class="active"><a href="{{ route('qamus.create') }}" ><i class="fa fa-globe"></i> قامۇس</a></li>
+                            <li role="presentation"><a href="{{ route('photos.create') }}"><i class="fa fa-image"></i> رەسىم</a></li>
+                        </ul>
+
                         <form action="{{ route('articles.store') }}" method="post">
                             {{ csrf_field() }}
                             <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">

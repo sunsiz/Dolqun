@@ -9,6 +9,6 @@ class QamusController extends Controller
 {
     public function create()
     {
-        return view('posts.qamus_create');
+        return view('qamus.create');
     }
 }

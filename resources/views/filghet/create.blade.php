@@ -11,15 +11,17 @@
             </div>
             <div class="col-md-9 mt25">
                 <div class="panel panel-default">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
-                        <li role="presentation"><a href="{{ route('posts.create') }}">ئادەتتىكى مەزمۇن</a></li>
-                        <li role="presentation"><a href="{{ route('qamus.create') }}" >قامۇس</a></li>
-                        <li role="presentation" class="active"><a href="{{ route('filghetes.create') }}">فىلغەت</a></li>
-                        <li role="presentation"><a href="#settings">رەسىم</a></li>
-                    </ul>
+
                     <div class="panel-body">
-                        <br>
+
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation"><a href="{{ route('posts.create') }}"><i class="fa fa-align-center"></i> مەزمۇن</a></li>
+                            <li role="presentation" class="active"><a href="{{ route('filghetes.create') }}"><i class="fa fa-language"></i> فىلغەت</a></li>
+                            <li role="presentation"><a href="{{ route('qamus.create') }}" ><i class="fa fa-globe"></i> قامۇس</a></li>
+                            <li role="presentation"><a href="{{ route('photos.create') }}"><i class="fa fa-image"></i> رەسىم</a></li>
+                        </ul>
+
                         <form action="{{ route('filghetes.store') }}" method="post">
                             {{ csrf_field() }}
                             <div class="form-group {{ $errors->has('ug') ? 'has-error' : '' }}">

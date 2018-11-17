@@ -3547,11 +3547,13 @@ fieldset[disabled] .form-control {
 
 .nav-tabs {
   border-bottom: 2px solid rgba(152, 166, 173, 0.2) !important;
+  margin-bottom: 20px;
 }
 
 .nav-tabs > li > a {
   border: none;
   color: #98a6ad;
+  padding: 15px;
 }
 
 .nav-tabs > li > a:hover {
@@ -3568,7 +3570,8 @@ fieldset[disabled] .form-control {
 .nav-tabs > li.active > a:hover {
   background-color: #fff;
   border: none;
-  border-bottom: 2px solid #02c0ce !important;
+  color: #2d8cf0;
+  border-bottom: 2px solid #2d8cf0 !important;
 }
 
 .label {
