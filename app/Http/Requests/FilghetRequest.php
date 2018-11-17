@@ -38,4 +38,5 @@ class FilghetRequest extends FormRequest
             'zh.max' => 'خەنزۇچە ئاتىلىشى ھەرپ سانى 255 دىن كۆپ بولمىسۇن'
         ];
     }
+
 }

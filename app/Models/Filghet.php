@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Filghet extends Model
 {
-    //
+    protected $fillable = ['ug', 'zh', 'other', 'description'];
 }

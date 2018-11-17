@@ -4,9 +4,17 @@ namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\FilghetRequest;
+use App\Models\Filghet;
 
 class FilghetesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['index']
+        ]);
+    }
+
     public function create()
     {
         return view('filghet.create');
@@ -14,6 +22,15 @@ class FilghetesController extends Controller
 
     public function store(FilghetRequest $filghetRequest)
     {
-        dd($filghetRequest->all());
+        Filghet::create([
+            'ug' => $filghetRequest->get('ug'),
+            'zh' => $filghetRequest->get('zh'),
+            'other' => $filghetRequest->get('other'),
+            'description' => $filghetRequest->get('description'),
+        ]);
+
+        session()->flash('success', 'قوشۇش غەلبىلىك بولدى');
+        return redirect()->back();
     }
+
 }
