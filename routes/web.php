@@ -37,6 +37,9 @@ Route::namespace('Home')->group(function () {
     //文章
     Route::resource('posts', 'PostController');
     Route::resource('articles', 'ArticleController');
+    Route::resource('qamus', 'QamusController');
+    Route::resource('filghetes', 'FilghetesController');
+    Route::resource('photos', 'PhotosController');
     Route::post('thumb', 'ArticleController@thumb')->name('article.thumb');
     //标签
     //Route::resource('tag', 'TagController');

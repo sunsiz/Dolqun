@@ -1,0 +1,68 @@
+@extends('layouts.global')
+@section('title', 'يازما يوللاش')
+@include('vendor.ueditor.assets')
+@section('content')
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-3">
+                @can('update', Auth::user())
+                    @include('users.sidebar', ['user' => Auth::user()])
+                @endcan
+            </div>
+            <div class="col-md-9 mt25">
+                <div class="panel panel-default">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation"><a href="{{ route('posts.create') }}">ئادەتتىكى مەزمۇن</a></li>
+                        <li role="presentation"><a href="{{ route('qamus.create') }}" >قامۇس</a></li>
+                        <li role="presentation" class="active"><a href="{{ route('filghetes.create') }}">فىلغەت</a></li>
+                        <li role="presentation"><a href="#settings">رەسىم</a></li>
+                    </ul>
+                    <div class="panel-body">
+                        <br>
+                        <form action="{{ route('filghetes.store') }}" method="post">
+                            {{ csrf_field() }}
+                            <div class="form-group {{ $errors->has('ug') ? 'has-error' : '' }}">
+                                <input type="text" class="form-control"  placeholder="ئۇيغۇرچە ئاتىلىشى" name="ug" value="{{ old('ug') }}">
+                                @if ($errors->has('ug'))
+                                    <span class="text-danger">
+                                        <strong>{{ $errors->first('ug') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group {{ $errors->has('zh') ? 'has-error' : '' }}">
+                                <input type="text" class="form-control"  placeholder="خەنچە ئاتىلىشى" name="zh" value="{{ old('zh') }}">
+                                @if ($errors->has('zh'))
+                                    <span class="text-danger">
+                                        <strong>{{ $errors->first('zh') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group {{ $errors->has('other') ? 'has-error' : '' }}">
+                                <input type="text" class="form-control"  placeholder="باشقا ئاتىلىشى" name="other" value="{{ old('other') }}">
+                                @if ($errors->has('other'))
+                                    <span class="text-danger">
+                                        <strong>{{ $errors->first('other') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
+                                <textarea  class="form-control"  placeholder="ئىزاھات" name="description" rows="4">{{ old('description') }}</textarea>
+                                @if ($errors->has('description'))
+                                    <span class="text-danger">
+                                        <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">قوشۇش</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@stop
