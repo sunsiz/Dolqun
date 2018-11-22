@@ -40,6 +40,7 @@ Route::namespace('Home')->group(function () {
     Route::resource('qamus', 'QamusController');
     Route::resource('filghetes', 'FilghetesController');
     Route::resource('photos', 'PhotosController');
+    Route::post('photo_thumb', 'PhotosController@thumb')->name('photos.thumb');
     Route::post('thumb', 'ArticleController@thumb')->name('article.thumb');
     //标签
     //Route::resource('tag', 'TagController');

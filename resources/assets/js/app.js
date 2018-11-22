@@ -19,6 +19,7 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 Vue.component('user-avatar', require('./components/Avatar.vue'));
 Vue.component('thumb', require('./components/Thumb.vue'));
+Vue.component('photo', require('./components/Photo.vue'));
 
 const app = new Vue({
     el: '#app'
