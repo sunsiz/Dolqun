@@ -48,9 +48,9 @@ class PhotosController extends Controller
         $file = $request->file('img');
         $filename = md5(time()).'.'.$file->getClientOriginalExtension();
 
-        $file->move(public_path('photo_thumb'), $filename);
+        $file->move(public_path('thumbs'), $filename);
 
-        return response()->json(['url' => '/photo_thumb/'.$filename]);
+        return response()->json(['url' => '/thumbs/'.$filename]);
     }
 
     public function destroy(Photo $photo)

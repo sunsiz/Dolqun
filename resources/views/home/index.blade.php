@@ -74,39 +74,24 @@
                         <h3>ئۇز رەسىم</h3>
                     </div>
                     <div class="hot-photos-list">
+
+                        @foreach($photos as $photo)
                         <div class="photos-list-item">
-                            <a href="#">
-                                <img src="{{ asset('./images/12.jpeg') }}" alt="" class="img-responsive">
+                            <a href="{{ route('photos.show', $photo->id) }}">
+                                <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
                             </a>
-                            <a href="#"><h3>ناروتۇ/火影忍者</h3></a>
+                            <a href="{{ route('photos.show', $photo->id) }}"><h3>{{ $photo->title }}</h3></a>
                         </div>
-                        <div class="photos-list-item">
-                            <a href="#">
-                                <img src="{{ asset('./images/heizi.jpeg') }}" alt="" class="img-responsive">
-                            </a>
-                            <a href="#"><h3>كوروكۇنىڭ ۋاسكېتبولى/黑子的篮球</h3></a>
-                        </div>
-                        <div class="photos-list-item">
-                            <a href="#">
-                                <img src="{{ asset('./images/yixiu.jpeg') }}" alt="" class="img-responsive">
-                            </a>
-                            <a href="#"><h3>ناروتۇ/火影忍者</h3></a>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="tags-area">
                     <div class="area-title">
-                        <h3>ئاۋات خەتكۈچلەر</h3>
+                        <h3>يېڭى قوشۇلغان سۆزلۈكلەر </h3>
                     </div>
                     <div class="tags-list">
                         <a href="#" class="btn btn-primary"><span>كورۇكۇنىڭ ۋاسكېتبولى</span></a>
                         <a href="#" class="btn btn-warning"><span>ناروتۇ</span></a>
-                        <a href="#" class="btn btn-success"><span>ئ‍اۋاتار</span></a>
-                        <a href="#" class="btn btn-warning"><span>خەتلىك فىلىم</span></a>
-                        <a href="#" class="btn btn-pink"><span>تېخنىكا</span></a>
-                        <a href="#" class="btn btn-purple"><span>چۈشۈرۈلمىلەر</span></a>
-                        <a href="#" class="btn btn-custom"><span>ئەپ دېتال</span></a>
-                        <a href="#" class="btn btn-info"><span>VIP ئەزالىق</span></a>
                     </div>
                 </div>
             </div>
