@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Models\Photo;
 use Auth;
 use App\Models\Post;
 use App\Http\Requests\PostRequest;
@@ -19,15 +20,42 @@ class PostController extends Controller
 
     public function index()
     {
-        echo 44444;die();
-        $posts = Post::paginate(10);
-
+        $posts = Post::orderBy('id', 'DESC')->paginate(10);
         return view('posts.index', compact('posts'));
     }
 
     public function create()
     {
         return view('posts.create');
+    }
+
+    public function show(Post $post)
+    {
+        return view('posts.edit', compact('post'));
+    }
+
+    public function edit(Post $post)
+    {
+        return view('posts.edit', compact('post'));
+    }
+
+    public function update(PostRequest $request, Post $post)
+    {
+        $data = [
+            'title' => $request->get('title'),
+            'slug' => '',
+            'description' => $request->get('description'),
+            'body' => $request->get('body'),
+            'status' => $request->get('status'),
+            'user_id' => Auth::user()->id,
+            'author' => Auth::user()->name,
+        ];
+
+        $post->update($data);
+
+        session()->flash('success', 'يازما تەھرىرلەش غەلبىلىك بولدى');
+        return redirect()->route('posts.index');
+
     }
 
     public function new(PostRequest $request)
@@ -49,5 +77,13 @@ class PostController extends Controller
 
         session()->flash('success', 'يازما يوللاش غەلبىلىك بولدى، رەسمىي يوللىنىشتىن بۇرۇن قايتا ئۆزگەرتەلەيسىز');
         return redirect()->route('posts.index');
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        session()->flash('success', 'ئۆچۈرۈش غەلبىلىك بولدى');
+        return back();
     }
 }

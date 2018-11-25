@@ -55,8 +55,8 @@ class ArticleController extends Controller
         //文件名
         $filename = md5(time()).'.'.$file->getClientOriginalExtension();
         //上传
-        $file->move(public_path('posts'), $filename);
+        $file->move(public_path('thumbs_posts'), $filename);
 
-        return response()->json(['url' => '/posts/'.$filename]);
+        return response()->json(['url' => '/thumbs_posts/'.$filename]);
     }
 }

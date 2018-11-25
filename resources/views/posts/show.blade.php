@@ -79,7 +79,7 @@
                 hljs.highlightBlock(block);
             });
             //编辑器的内的图片改为响应式图片类型
-            // $('.post-body img').addClass('img-responsive');
+            $('.post-body img').addClass('img-responsive');
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
