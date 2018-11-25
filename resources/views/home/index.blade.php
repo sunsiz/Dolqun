@@ -18,6 +18,22 @@
                 </ul>
             </div>
         </div>
+        <div class="row searchForm">
+            <form action="{{ route('search') }}">
+                <div class="col-md-6 col-md-offset-3">
+                    <button type="submit" class="btn izdesh">ئ‍ىزدەش</button>
+                    <input type="hidden" name="type" value="posts" id="searchType">
+                    <input type="text" class="" name="keywords"
+                           placeholder="ھالقىلىق سۆزنى كىرگۈزۈپ ئىزدەڭ...">
+                    <ul class="searchType">
+                        <h3><i class="fa fa-arrow-down"></i> <span>مەزمۇن</span></h3>
+                        <li data-value="filghetes">فىلغەت</li>
+                        <li data-value="photos">رەسىم</li>
+                    </ul>
+                </div>
+            </form>
+
+        </div>
         <div class="row main-area">
             <div class="col-md-9 col-xs-12 right-area">
                 <div class="video-list">
@@ -104,4 +120,17 @@
             </div>
         </div>
     </div>
+@stop
+
+@section('scripts')
+    <script>
+        $(function () {
+            $('.searchType li').on('click', function () {
+                var searchType = $(this).attr('data-value');
+                var searchText = $(this).text();
+                $('.searchType h3 span').text(searchText);
+                $('#searchType').attr('value', searchType)
+            });
+        })
+    </script>
 @stop

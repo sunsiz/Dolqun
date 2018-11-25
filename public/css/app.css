@@ -3883,3 +3883,62 @@ body {
   color: rgba(49, 58, 70, 0.7);
 }
 
+.searchForm {
+  margin: 50px 0;
+  position: relative;
+}
+
+.searchForm input {
+  height: 40px;
+  width: 100%;
+  padding-right: 60px;
+  outline: none;
+}
+
+.searchForm button.izdesh {
+  position: absolute;
+  right: 0;
+  background: #333333;
+  color: #fff;
+  border-radius: 30px;
+  height: 40px;
+  line-height: 14px;
+}
+
+.searchForm .searchType {
+  width: 80px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.searchForm .searchType h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  height: 40px;
+  line-height: 36px;
+  text-align: center;
+  background: #333333;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 30px;
+}
+
+.searchForm .searchType li {
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #333333;
+  cursor: pointer;
+  display: none;
+}
+
+.searchForm .searchType li:hover {
+  color: #2d8cf0;
+}
+
+.searchForm .searchType:hover > li {
+  display: block;
+}
+
