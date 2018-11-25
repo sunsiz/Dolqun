@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Models\Filghet;
 use App\Models\Photo;
 use App\Models\Post;
 use App\Http\Controllers\Controller;
@@ -14,6 +15,8 @@ class IndexController extends Controller
 
         $photos = Photo::orderBy('id', 'DESC')->take(3)->get();
 
-        return view('home.index', compact('posts', 'photos'));
+        $filghets = Filghet::orderBy('id', 'DESC')->take(6)->get();
+
+        return view('home.index', compact('posts', 'photos', 'filghets'));
     }
 }

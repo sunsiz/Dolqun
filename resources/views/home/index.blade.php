@@ -26,45 +26,46 @@
                     </div>
                     <ul>
                         @foreach( $posts as  $post)
-                        <li>
-                            <div class="row">
-                                <div class="col-md-4 col-sm-4 col-xs-12 video-img">
-                                    <a href="{{ route('articles.show', $post->id) }}">
-                                        <img src="{{ asset($post->thumb) }}" alt="" class="img-responsive">
-                                    </a>
-                                </div>
-                                <div class="col-md-8 col-sm-8 col-xs-12">
-                                    <div class="video-content">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-4 col-sm-4 col-xs-12 video-img">
                                         <a href="{{ route('articles.show', $post->id) }}">
-                                            <h3>{{ $post->title }}</h3>
+                                            <img src="{{ asset($post->thumb) }}" alt="" class="img-responsive">
                                         </a>
-                                        <div class="video-star">
-                                            <span class="color-warning"><i class="fa fa-star"></i></span>
-                                            <span class="color-warning"><i class="fa fa-star"></i></span>
-                                            <span class="color-warning"><i class="fa fa-star"></i></span>
-                                            <span class="color-warning"><i class="fa fa-star"></i></span>
-                                            <span><i class="fa fa-star"></i></span>
-                                            <span class="video-star">9.0</span>
-                                        </div>
-                                        <p>{{ $post->description }}</p>
-                                        <div class="video-info">
+                                    </div>
+                                    <div class="col-md-8 col-sm-8 col-xs-12">
+                                        <div class="video-content">
+                                            <a href="{{ route('articles.show', $post->id) }}">
+                                                <h3>{{ $post->title }}</h3>
+                                            </a>
+                                            <div class="video-star">
+                                                <span class="color-warning"><i class="fa fa-star"></i></span>
+                                                <span class="color-warning"><i class="fa fa-star"></i></span>
+                                                <span class="color-warning"><i class="fa fa-star"></i></span>
+                                                <span class="color-warning"><i class="fa fa-star"></i></span>
+                                                <span><i class="fa fa-star"></i></span>
+                                                <span class="video-star">9.0</span>
+                                            </div>
+                                            <p>{{ $post->description }}</p>
+                                            <div class="video-info">
                                             <span>
                                                 <i class="fa fa-clock-o"></i>
                                                 {{ Date::parse($post->created_at)->diffForHumans(Date::now()) }}
                                             </span>
-                                            <span>
+                                                <span>
                                                 <i class="fa fa-eye"></i>
-                                                {{ $post->clicks }}
+                                                    {{ $post->clicks }}
                                             </span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
                         @endforeach
                     </ul>
                     <div class="load-more">
-                        <button class="btn btn-outline-primary" style="margin: 0 auto;display: block">تېخىمۇ كۆپ ...</button>
+                        <button class="btn btn-outline-primary" style="margin: 0 auto;display: block">تېخىمۇ كۆپ ...
+                        </button>
                     </div>
                 </div>
             </div>
@@ -76,12 +77,12 @@
                     <div class="hot-photos-list">
 
                         @foreach($photos as $photo)
-                        <div class="photos-list-item">
-                            <a href="{{ route('photos.show', $photo->id) }}">
-                                <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
-                            </a>
-                            <a href="{{ route('photos.show', $photo->id) }}"><h3>{{ $photo->title }}</h3></a>
-                        </div>
+                            <div class="photos-list-item">
+                                <a href="{{ route('photos.show', $photo->id) }}">
+                                    <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
+                                </a>
+                                <a href="{{ route('photos.show', $photo->id) }}"><h3>{{ $photo->title }}</h3></a>
+                            </div>
                         @endforeach
                     </div>
                 </div>
@@ -90,8 +91,14 @@
                         <h3>يېڭى قوشۇلغان سۆزلۈكلەر </h3>
                     </div>
                     <div class="tags-list">
-                        <a href="#" class="btn btn-primary"><span>كورۇكۇنىڭ ۋاسكېتبولى</span></a>
-                        <a href="#" class="btn btn-warning"><span>ناروتۇ</span></a>
+                        @foreach($filghets as $k=>$filghet)
+                            @php
+                                $colors = ['btn-primary', 'btn-danger', 'btn-info', 'btn-pink', 'btn-warning', 'btn-success'];
+                            @endphp
+                            <a href="{{ route('filghetes.show', $filghet->id) }}" class="btn {{$colors[$k]}}">
+                                <span>{{ $filghet->ug }}</span>
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>

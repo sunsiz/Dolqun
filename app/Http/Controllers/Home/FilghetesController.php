@@ -11,7 +11,7 @@ class FilghetesController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['index']
+            'except' => ['index', 'show']
         ]);
     }
 
@@ -33,4 +33,9 @@ class FilghetesController extends Controller
         return redirect()->back();
     }
 
+    public function show($id)
+    {
+        $filghet = Filghet::findOrFail($id);
+        return view('filghet.show', compact('filghet'));
+    }
 }
