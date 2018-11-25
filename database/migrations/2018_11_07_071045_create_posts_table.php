@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('title');
             $table->string('description', 255)->nullable();
             $table->string('slug', 255);
-            $table->text('body');
+            $table->longText('body');
             $table->string('author')->nullable();
             $table->integer('clicks')->default(0)->nullable();
             $table->string('thumb')->nullable();

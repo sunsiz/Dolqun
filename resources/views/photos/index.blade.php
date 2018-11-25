@@ -47,7 +47,7 @@
                                     <th>
                                         <!-- Single button -->
                                         <div class="btn-group">
-                                            <a href="" class="btn btn-info btn-sm">تەھرىرلەش</a>
+                                            <a href="{{ route('photos.edit', $photo->id) }}" class="btn btn-info btn-sm">تەھرىرلەش</a>
                                             <form action="{{ route('photos.destroy', $photo->id) }}" method="post" style="display: inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}

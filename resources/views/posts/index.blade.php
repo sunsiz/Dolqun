@@ -20,6 +20,7 @@
                                 <th>يازما ماۋزۇسى</th>
                                 <th>ھالىتى</th>
                                 <th>ئاپتور</th>
+                                <th>مەشخۇلات</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -29,6 +30,16 @@
                                     <td><a href="{{ route('posts.show', $post->id) }}">{{ $post->title }}</a></td>
                                     <td>{{ $post->status==1?'يوللانغان':'ئارگىنال' }}</td>
                                     <td>{{ $post->author }}</td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-info btn-sm">تەھرىرلەش</a>
+                                            <form action="{{ route('posts.destroy', $post->id) }}" method="post" style="display: inline">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button class="btn btn-danger btn-sm" type="submit">ئ‍ۆچۈرۈش</button>
+                                            </form>
+                                        </div>
+                                    </td>
                                 </tr>
                             @endforeach
                             </tbody>

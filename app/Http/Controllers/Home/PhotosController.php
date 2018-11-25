@@ -43,6 +43,33 @@ class PhotosController extends Controller
         return redirect()->route('photos.index');
     }
 
+    public function show(Photo $photo)
+    {
+        return view('photos.show', compact('photo'));
+    }
+
+    public function edit(Photo $photo)
+    {
+        return view('photos.edit', compact('photo'));
+    }
+
+    public function update(CreatePhotoRequest $request, Photo $photo)
+    {
+
+        $data = [
+            'title' => $request->get('title'),
+            'type' => $request->get('type'),
+            'body' => $request->get('body'),
+            'thumb' => $request->get('thumb'),
+            'user_id' => Auth::user()->id,
+        ];
+
+        $photo->update($data);
+
+        session()->flash('success', 'رەسىم تەھرىرلەش غەلبىلىك بولدى');
+        return redirect()->route('photos.index');
+    }
+
     public function thumb(Request $request)
     {
         $file = $request->file('img');

@@ -17,7 +17,7 @@ class CreatePhotosTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->index();
             $table->string('title')->nullable();
-            $table->string('body')->nullable();
+            $table->longText('body')->nullable();
             $table->smallInteger('type')->default(1)->nullable();
             $table->smallInteger('status')->default(1)->nullable();
             $table->integer('clicks')->default(0)->nullable();
