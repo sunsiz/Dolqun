@@ -317,8 +317,13 @@ body {
         color: $primaryColor;
       }
     }
-    &:hover > li{
+    &:hover > li {
       display: block;
     }
   }
+}
+
+.lf-border {
+  border: 1px solid #d3e0e9;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
