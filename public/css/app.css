@@ -3739,13 +3739,20 @@ body {
 }
 
 .area-title {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .area-title h3 {
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   color: #2d8cf0;
+  border: 1px solid #2d8cf0;
+  width: 120px;
+  height: 40px;
+  line-height: 34px;
+  text-align: center;
+  border-radius: 30px;
+  margin: 0;
 }
 
 .video-list .video-content {
@@ -3840,17 +3847,13 @@ body {
   color: #fff;
 }
 
-.hot-photos-list h3 {
-  font-size: 14px;
-}
-
 .photos-list-item {
   background: #fff;
-  padding-bottom: 4px;
   -webkit-transition: all 0.2s linear 0s;
   transition: all 0.2s linear 0s;
   position: relative;
   margin-bottom: 20px;
+  padding-bottom: 4px;
 }
 
 .photos-list-item:hover {
@@ -3872,11 +3875,15 @@ body {
 }
 
 .photos-list-item h3 {
-  margin: 10px 0;
-  height: 40px;
-  line-height: 40px;
-  padding: 0 15px;
+  margin: 6px 0;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
   text-align: center;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .photos-list-item a {

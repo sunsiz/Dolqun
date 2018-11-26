@@ -136,11 +136,18 @@ body {
 }
 
 .area-title {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   h3 {
     font-weight: normal;
-    font-size: 16px;
+    font-size: 14px;
     color: $primaryColor;
+    border: 1px solid $primaryColor;
+    width: 120px;
+    height: 40px;
+    line-height: 34px;
+    text-align: center;
+    border-radius: 30px;
+    margin: 0;
   }
 }
 
@@ -234,16 +241,12 @@ body {
   color: #fff;
 }
 
-.hot-photos-list h3 {
-  font-size: 14px;
-}
-
 .photos-list-item {
   background: #fff;
-  padding-bottom: 4px;
   transition: all 0.2s linear 0s;
   position: relative;
   margin-bottom: 20px;
+  padding-bottom: 4px;
   &:hover {
     background: #fff;
     -webkit-box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
@@ -260,11 +263,15 @@ body {
     width: 100%;
   }
   h3 {
-    margin: 10px 0;
-    height: 40px;
-    line-height: 40px;
-    padding: 0 15px;
+    margin: 6px 0;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
     text-align: center;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   a {
     color: rgba(49, 58, 70, 0.7);

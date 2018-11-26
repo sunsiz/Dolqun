@@ -2,22 +2,22 @@
 @section('title', 'كىرىش بېتى')
 @section('content')
     <div class="row">
-        <div class="home-top-area">
-            <div class="logo-area">
-                <div id="logo">
-                    <a href="{{ route('home') }}">
-                        <img src="{{ asset('./images/logo.png') }}" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="slider-area">
-                <ul>
-                    <li><img src="{{ asset('./images/Slam-Dunk.jpg') }}" alt=""></li>
-                    <li><img src="{{ asset('./images/12.jpeg') }}" alt=""></li>
-                    <li><img src="{{ asset('./images/heizi.jpeg') }}" alt=""></li>
-                </ul>
-            </div>
-        </div>
+        {{--<div class="home-top-area">--}}
+            {{--<div class="logo-area">--}}
+                {{--<div id="logo">--}}
+                    {{--<a href="{{ route('home') }}">--}}
+                        {{--<img src="{{ asset('./images/logo.png') }}" alt="">--}}
+                    {{--</a>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--<div class="slider-area">--}}
+                {{--<ul>--}}
+                    {{--<li><img src="{{ asset('./images/Slam-Dunk.jpg') }}" alt=""></li>--}}
+                    {{--<li><img src="{{ asset('./images/12.jpeg') }}" alt=""></li>--}}
+                    {{--<li><img src="{{ asset('./images/heizi.jpeg') }}" alt=""></li>--}}
+                {{--</ul>--}}
+            {{--</div>--}}
+        {{--</div>--}}
         <div class="row searchForm">
             <form action="{{ route('search') }}">
                 <div class="col-md-6 col-md-offset-3">
@@ -35,10 +35,10 @@
 
         </div>
         <div class="row main-area">
-            <div class="col-md-9 col-xs-12 right-area">
+            <div class="col-md-8 col-xs-12 right-area">
                 <div class="video-list">
                     <div class="area-title">
-                        <h3>يېڭى يوللانغانلار</h3>
+                        <h3>يېڭى يازمىلار</h3>
                     </div>
                     <ul>
                         @foreach( $posts as  $post)
@@ -85,38 +85,42 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-3 left-area">
-                <div class="hot-photos-area">
-                    <div class="area-title">
-                        <h3>ئۇز رەسىم</h3>
-                    </div>
-                    <div class="hot-photos-list">
+            <div class="col-md-4 left-area">
+                <div class="row">
+                    <div class="tags-area" style="margin:60px 0 30px 0;overflow: hidden;">
+                        <div class="col-md-12 area-title">
+                            <h3>يېڭى سۆزلۈك </h3>
+                        </div>
 
-                        @foreach($photos as $photo)
-                            <div class="photos-list-item">
-                                <a href="{{ route('photos.show', $photo->id) }}">
-                                    <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
+                        <div class="col-md-12 tags-list">
+                            @foreach($filghets as $k=>$filghet)
+                                @php
+                                    $colors = ['btn-primary', 'btn-danger', 'btn-info', 'btn-pink', 'btn-warning', 'btn-success'];
+                                @endphp
+                                <a href="{{ route('filghetes.show', $filghet->id) }}" class="btn {{$colors[$k]}}">
+                                    <span>{{ $filghet->ug }}</span>
                                 </a>
-                                <a href="{{ route('photos.show', $photo->id) }}"><h3>{{ $photo->title }}</h3></a>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="photo-area">
+                        <div class="col-md-12 area-title">
+                            <h3>ئۇز رەسىم</h3>
+                        </div>
+                        @foreach($photos as $photo)
+                            <div class="col-md-6">
+                                <div class="photos-list-item">
+                                    <a href="{{ route('photos.show', $photo->id) }}">
+                                        <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
+                                    </a>
+                                    <a href="{{ route('photos.show', $photo->id) }}"><h3>{{ $photo->title }}</h3></a>
+                                </div>
                             </div>
                         @endforeach
                     </div>
+
                 </div>
-                <div class="tags-area">
-                    <div class="area-title">
-                        <h3>يېڭى قوشۇلغان سۆزلۈكلەر </h3>
-                    </div>
-                    <div class="tags-list">
-                        @foreach($filghets as $k=>$filghet)
-                            @php
-                                $colors = ['btn-primary', 'btn-danger', 'btn-info', 'btn-pink', 'btn-warning', 'btn-success'];
-                            @endphp
-                            <a href="{{ route('filghetes.show', $filghet->id) }}" class="btn {{$colors[$k]}}">
-                                <span>{{ $filghet->ug }}</span>
-                            </a>
-                        @endforeach
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
