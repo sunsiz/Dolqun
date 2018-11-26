@@ -26,7 +26,7 @@
                     <input type="text" class="" name="keywords"
                            placeholder="ھالقىلىق سۆزنى كىرگۈزۈپ ئىزدەڭ...">
                     <ul class="searchType">
-                        <h3><i class="fa fa-arrow-down"></i> <span>مەزمۇن</span></h3>
+                        <h3><i class="fa fa-angle-down"></i> <span>مەزمۇن</span></h3>
                         <li data-value="filghetes">فىلغەت</li>
                         <li data-value="photos">رەسىم</li>
                     </ul>
