@@ -13,6 +13,7 @@
 
 Route::namespace('Home')->group(function () {
     Route::get('/', 'IndexController@index')->name('home');
+    Route::get('/download', 'IndexController@download')->name('download');
 
     //登录
     Route::get('login', 'LoginController@create')->name('login');

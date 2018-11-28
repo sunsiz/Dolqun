@@ -19,4 +19,9 @@ class IndexController extends Controller
 
         return view('home.index', compact('posts', 'photos', 'filghets'));
     }
+
+    public function download()
+    {
+        return view('home.download');
+    }
 }
