@@ -25,7 +25,13 @@ class SearchController extends Controller
                 return view('posts.search_index', compact('posts', 'keywords'));
                 break;
             case 'filghetes' :
-                $filghets = Filghet::where('ug','like' , "%".$keywords."%")->get();
+                $han = preg_match('/[\x{4e00}-\x{9fa5}]/u', $keywords)>0;
+                if ($han) {
+                    $filghets = Filghet::where('zh','like' , "%".$keywords."%")->get();
+
+                }else{
+                    $filghets = Filghet::where('ug','like' , "%".$keywords."%")->get();
+                }
                 return view('filghet.search_index', compact('filghets', 'keywords'));
                 break;
             case 'photos' :
