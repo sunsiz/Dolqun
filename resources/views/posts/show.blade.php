@@ -13,26 +13,6 @@
                 {!! $post->body !!}
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="post-likes-statics bg-white br3">
-                    {{--@auth--}}
-                        {{--<like-post post_id="{{ $post->id }}"></like-post>--}}
-                    {{--@endauth--}}
-
-                    {{--@if($post->likers->count())--}}
-                            {{--<div class="post-likers">--}}
-                                {{--<div class="text-muted" style="margin-bottom: 15px;"> {{ $post->likers->count() }}ئەزا بۇ تېمىنى ياقتۇردى  </div>--}}
-                                {{--@foreach($post->likers as $liker)--}}
-                                    {{--<a href="{{ route('user.show', $liker->user_id) }}">--}}
-                                        {{--<img src="{{ $liker->avatar }}" alt="{{ $liker->name }}" class="img-responsive img-circle" data-toggle="tooltip" data-placement="bottom" title="{{ $liker->name }}">--}}
-                                    {{--</a>--}}
-                                {{--@endforeach--}}
-                            {{--</div>--}}
-                   {{--@endif--}}
-                </div>
-            </div>
-        </div>
         {{--<div class="row">--}}
             {{--<div class="col-md-12">--}}
                 {{--<div class="page-header">--}}
