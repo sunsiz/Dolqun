@@ -44,9 +44,9 @@
                             @endforeach
                             </tbody>
                         </table>
+                        {{  $posts->render() }}
                     </div>
                 </div>
-                {{  $posts->render() }}
             </div>
         </div>
     </div>
