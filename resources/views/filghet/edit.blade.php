@@ -22,10 +22,13 @@
                             <li role="presentation"><a href="{{ route('photos.create') }}"><i class="fa fa-image"></i> رەسىم</a></li>
                         </ul>
 
-                        <form action="{{ route('filghetes.store') }}" method="post">
+                        <form action="{{ route('filghetes.update', $filghet->id) }}" method="post">
+                            {{ method_field('PATCH') }}
                             {{ csrf_field() }}
+
+                            <input type="hidden" name="id" value="{{ $filghet->id }}">
                             <div class="form-group {{ $errors->has('ug') ? 'has-error' : '' }}">
-                                <input type="text" class="form-control"  placeholder="ئۇيغۇرچە ئاتىلىشى" name="ug" value="{{ old('ug') }}">
+                                <input type="text" class="form-control"  placeholder="ئۇيغۇرچە ئاتىلىشى" name="ug" value="{{ $filghet->ug }}">
                                 @if ($errors->has('ug'))
                                     <span class="text-danger">
                                         <strong>{{ $errors->first('ug') }}</strong>
@@ -34,7 +37,7 @@
                             </div>
 
                             <div class="form-group {{ $errors->has('zh') ? 'has-error' : '' }}">
-                                <input type="text" class="form-control"  placeholder="خەنچە ئاتىلىشى" name="zh" value="{{ old('zh') }}">
+                                <input type="text" class="form-control"  placeholder="خەنچە ئاتىلىشى" name="zh" value="{{ $filghet->zh }}">
                                 @if ($errors->has('zh'))
                                     <span class="text-danger">
                                         <strong>{{ $errors->first('zh') }}</strong>
@@ -43,7 +46,7 @@
                             </div>
 
                             <div class="form-group {{ $errors->has('other') ? 'has-error' : '' }}">
-                                <input type="text" class="form-control"  placeholder="باشقا ئاتىلىشى" name="other" value="{{ old('other') }}">
+                                <input type="text" class="form-control"  placeholder="باشقا ئاتىلىشى" name="other" value="{{ $filghet->other }}">
                                 @if ($errors->has('other'))
                                     <span class="text-danger">
                                         <strong>{{ $errors->first('other') }}</strong>
@@ -52,7 +55,7 @@
                             </div>
 
                             <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
-                                <textarea  class="form-control"  placeholder="ئىزاھات" name="description" rows="4">{{ old('description') }}</textarea>
+                                <textarea  class="form-control"  placeholder="ئىزاھات" name="description" rows="4">{{ $filghet->description }}</textarea>
                                 @if ($errors->has('description'))
                                     <span class="text-danger">
                                         <strong>{{ $errors->first('description') }}</strong>
@@ -60,7 +63,7 @@
                                 @endif
                             </div>
 
-                            <button type="submit" class="btn btn-primary">قوشۇش</button>
+                            <button type="submit" class="btn btn-primary">ساقلاش</button>
                             <a href="{{ route('filghetes.index') }}" class="btn btn-default">تېزىملىككە قايتىش</a>
                         </form>
                     </div>

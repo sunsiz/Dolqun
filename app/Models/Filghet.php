@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Filghet extends Model
 {
-    protected $fillable = ['ug', 'zh', 'other', 'description'];
+    protected $table = 'filghets';
+
+    protected $primaryKey = 'id';
+
+    protected $fillable = ['id', 'ug', 'zh', 'other', 'description'];
 }

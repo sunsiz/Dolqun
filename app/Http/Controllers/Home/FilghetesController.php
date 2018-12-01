@@ -15,6 +15,12 @@ class FilghetesController extends Controller
         ]);
     }
 
+    public function index()
+    {
+        $filghetes = Filghet::orderBy('id', 'DESC')->paginate(10);
+        return view('filghet.index', compact('filghetes'));
+    }
+
     public function create()
     {
         return view('filghet.create');
@@ -30,12 +36,41 @@ class FilghetesController extends Controller
         ]);
 
         session()->flash('success', 'قوشۇش غەلبىلىك بولدى');
-        return redirect()->back();
+        return redirect()->route('filghetes.index');
     }
 
     public function show($id)
     {
         $filghet = Filghet::findOrFail($id);
         return view('filghet.show', compact('filghet'));
+    }
+
+    public function edit($id)
+    {
+        $filghet = Filghet::findOrFail($id);
+        return view('filghet.edit', compact('filghet'));
+    }
+
+    public function update(FilghetRequest $request, Filghet $filghet)
+    {
+        $data = [
+            'ug' => $request->get('ug'),
+            'zh' => $request->get('zh'),
+            'other' => $request->get('other'),
+            'description' => $request->get('description'),
+        ];
+
+        $filghet->where('id', '=', $request->get('id'))->update($data);
+
+        session()->flash('success', 'فىلغەت تەھرىرلەش غەلبىلىك بولدى');
+        return redirect()->route('filghetes.index');
+    }
+
+    public function destroy($filghet)
+    {
+        Filghet::where('id', '=', $filghet)->delete();
+
+        session()->flash('success', 'ئۆچۈرۈش غەلبىلىك بولدى');
+        return back();
     }
 }
