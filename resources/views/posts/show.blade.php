@@ -33,19 +33,19 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="page-header">
+        {{--<div class="row">--}}
+            {{--<div class="col-md-12">--}}
+                {{--<div class="page-header">--}}
                     {{--<h4 class="text-muted"> جەمئىي {{ $post->allComments->count() }} ئىنكاس يېزىلدى</h4>--}}
-                </div>
-                @auth()
-                    <div class="alert alert-warning alert-dismissible" role="alert" style="text-align: justify;">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <strong>ئۇيغۇرچە كىرگۈزۈش كۆرسەتمىسى</strong> <br>
-                        بېكىتىمىز ئۇيغۇرچە كىرگۈزۈش ئۈچۈن قارلۇق شىركىتىدىن ئادىلجان ياسىن مۇئەللىم ياساپ چىققان Qarluq.UIME.js ئىشلىتىلگەن بولۇپ.
-                        MAC OS سىستىمىسىدا Control ياكى
-                        Windows سىستىمىسىدا Ctrl كۇنۇپكىسى ئارقىلق تىل ئالماشتۇرۇشقا بولىدۇ .
-                    </div>
+                {{--</div>--}}
+                {{--@auth()--}}
+                    {{--<div class="alert alert-warning alert-dismissible" role="alert" style="text-align: justify;">--}}
+                        {{--<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>--}}
+                        {{--<strong>ئۇيغۇرچە كىرگۈزۈش كۆرسەتمىسى</strong> <br>--}}
+                        {{--بېكىتىمىز ئۇيغۇرچە كىرگۈزۈش ئۈچۈن قارلۇق شىركىتىدىن ئادىلجان ياسىن مۇئەللىم ياساپ چىققان Qarluq.UIME.js ئىشلىتىلگەن بولۇپ.--}}
+                        {{--MAC OS سىستىمىسىدا Control ياكى--}}
+                        {{--Windows سىستىمىسىدا Ctrl كۇنۇپكىسى ئارقىلق تىل ئالماشتۇرۇشقا بولىدۇ .--}}
+                    {{--</div>--}}
                 {{--<form action="{{ route('posts.comment', $post->id) }}" method="post">--}}
                     {{--{{ csrf_field() }}--}}
                     {{--<div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">--}}
@@ -58,17 +58,17 @@
                     {{--</div>--}}
                     {{--<button type="submit" class="btn btn-outline-custom">يوللاش</button>--}}
                 {{--</form>--}}
-                    @else
-                    <div class="alert alert-warning alert-dismissible tac pd25" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        بىكەتكە كىرگەندىن كىيىن ئىنكاس يازالايسىز . <a href="{{ route('login') }}"> ھازىرلا كىرەي</a>
-                    </div>
-                @endauth
-            </div>
-            <div class="col-md-12">
+                    {{--@else--}}
+                    {{--<div class="alert alert-warning alert-dismissible tac pd25" role="alert">--}}
+                        {{--<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>--}}
+                        {{--بىكەتكە كىرگەندىن كىيىن ئىنكاس يازالايسىز . <a href="{{ route('login') }}"> ھازىرلا كىرەي</a>--}}
+                    {{--</div>--}}
+                {{--@endauth--}}
+            {{--</div>--}}
+            {{--<div class="col-md-12">--}}
                 {{--@include('comments.list')--}}
-            </div>
-        </div>
+            {{--</div>--}}
+        {{--</div>--}}
     </div>
 @stop
 @section('scripts')

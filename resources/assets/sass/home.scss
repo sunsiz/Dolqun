@@ -1,6 +1,24 @@
 body {
   background: #f8f8f9;
-  padding-top: 80px;
+}
+.container-fluid {
+  padding: 0;
+}
+.lf-header {
+  height: 220px;
+  overflow: hidden;
+  background: url('../../images/logo-background.png') 0 0;
+  background-size: 100% 100%;
+  img {
+    width: 100%;
+    max-height: 100%;
+  }
+  .p-logo {
+    img {
+      height: 160px;
+      width: 380px;
+    }
+  }
 }
 
 .navbar {
@@ -137,6 +155,7 @@ body {
 
 .area-title {
   margin-bottom: 15px;
+  width: 100%;
   h3 {
     font-weight: normal;
     font-size: 14px;
@@ -192,9 +211,21 @@ body {
     }
   }
 }
+.common-title {
+  background:red;
+}
+
+.hasLogin, .noLogin {
+  text-align: center;
+  line-height: 160px;
+  a {
+    color: #fff;
+  }
+}
 
 .video-list li .video-img {
   padding-right: 15px;
+  overflow: hidden;
 }
 
 .video-list li .video-img img {

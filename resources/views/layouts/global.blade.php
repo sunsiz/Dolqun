@@ -23,57 +23,37 @@
 </head>
 <body>
 <div id="app">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('./images/logo-icon.png') }}" alt="">
-                </a>
-            </div>
-
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{ route('home') }}"> باشبەت<span class="sr-only">(current)</span></a>
-                    </li>
-                    {{--<li><a href="#">قامۇس</a></li>--}}
-                    {{--<li><a href="#">فىلغەت</a></li>--}}
-
-                </ul>
-
-                <ul class="nav navbar-nav navbar-right">
+    {{--@include('layouts/navbar')--}}
+    <div class="container-fluid lf-header">
+        {{--<img src="{{ asset('images/logo-background.png') }}" alt="">--}}
+        <div class="container p-logo">
+            <div class="row">
+                <div class="col-md-4" style="padding-top: 20px;">
+                    <a href="{{ route('home') }}">
+                        <img src="{{ asset('images/logo.png') }}" alt="">
+                    </a>
+                </div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
                     @auth()
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                               aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+                        <div class="hasLogin">
+                            ياخشىمۇسىز!
+                            <a href="{{ route('user.edit', Auth::user()->id) }}" style="color: #fff;line-height: 100%;">
                                 {{ Auth::user()->name }}
-                                <img src="{{ asset(Auth::user()->avatar) }}" alt="" class="img-circle" height="18">
                             </a>
-                            <ul class="dropdown-menu">
-                                {{--@can('is_admin', $user)--}}
-                                    {{--<li><a href="{{ route('user.show', Auth::user()->id) }}"><i class="fa fa-cog"></i> سىستېما باشقۇرۇش</a></li>--}}
-                                {{--@endcan--}}
-                                <li><a href="{{ route('user.edit', Auth::user()->id) }}"><i class="fa fa-edit"></i> ئ‍اكونت تەڭشىكى</a></li>
-                                <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> بېخەتەر چىكىنىش</a>
-                                </li>
-                            </ul>
-                        </li>
+                            <a href="{{ route('logout') }}"> [ بېخەتەر چىكىنىش ]</a>
+                        </div>
                     @else
-                        <li><a href="{{ route('login') }}">كىرىش</a></li>
-                        <li><a href="{{ route('register') }}">تېزىملىتىش</a></li>
+                        <div class="noLogin">
+                            <a href="{{ route('login') }}">[ كىرىش ]</a> |
+                            <a href="{{ route('register') }}">[ تېزىملىتىش ]</a>
+                        </div>
+
                     @endauth
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container">
         <div class="row" style="padding-top:60px;">
             <div class="col-md-12">

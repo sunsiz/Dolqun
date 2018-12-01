@@ -11,7 +11,7 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('id', 'DESC')->paginate(10);
+        $posts = Post::orderBy('id', 'DESC')->paginate(20);
 
         $photos = Photo::orderBy('id', 'DESC')->take(3)->get();
 

@@ -20,7 +20,7 @@
         {{--</div>--}}
         <div class="row searchForm">
             <form action="{{ route('search') }}">
-                <div class="col-md-6 col-md-offset-3">
+                <div class="col-md-6 col-xs-10 col-md-offset-3 col-xs-offset-1">
                     <button type="submit" class="btn izdesh">ئ‍ىزدەش</button>
                     <input type="hidden" name="type" value="posts" id="searchType">
                     <input type="text" class="" name="keywords"
@@ -34,10 +34,10 @@
             </form>
 
         </div>
-        <div class="row main-area">
+        <div class="row">
             <div class="col-md-8 col-xs-12 right-area">
                 <div class="video-list">
-                    <div class="area-title">
+                    <div class="area-title hidden-xs hidden-sm">
                         <h3>يېڭى يازمىلار</h3>
                     </div>
                     <ul>
@@ -62,11 +62,11 @@
                                                 <span><i class="fa fa-star"></i></span>
                                                 <span class="video-star">9.0</span>
                                             </div>
-                                            <p>{{ $post->description }}</p>
+                                            <p class="hidden-xs">{{ $post->description }}</p>
                                             <div class="video-info">
                                             <span>
                                                 <i class="fa fa-clock-o"></i>
-                                                {{ Date::parse($post->created_at)->diffForHumans(Date::now()) }}
+                                                {{ Date::parse($post->updated_at)->diffForHumans(Date::now()) }}
                                             </span>
                                                 <span>
                                                 <i class="fa fa-eye"></i>
@@ -79,16 +79,17 @@
                             </li>
                         @endforeach
                     </ul>
-                    <div class="load-more">
-                        <button class="btn btn-outline-primary" style="margin: 0 auto;display: block">تېخىمۇ كۆپ ...
-                        </button>
-                    </div>
+                    {{--<div class="load-more hidden-xs">--}}
+                        {{--<button class="btn btn-outline-primary" style="margin: 0 auto;display: block">تېخىمۇ كۆپ ...--}}
+                        {{--</button>--}}
+                    {{--</div>--}}
                 </div>
             </div>
             <div class="col-md-4 left-area">
                 <div class="row">
-                    <div class="tags-area" style="margin:60px 0 30px 0;overflow: hidden;">
-                        <div class="col-md-12 area-title">
+                    <div class="lf-filghet" style="margin-bottom: 20px;overflow: hidden;" >
+
+                        <div class="col-md-12 area-title hidden-sm hidden-xs">
                             <h3>يېڭى سۆزلۈك </h3>
                         </div>
 
@@ -103,21 +104,20 @@
                             @endforeach
                         </div>
                     </div>
-                    <div class="photo-area">
-                        <div class="col-md-12 area-title">
-                            <h3>ئۇز رەسىم</h3>
-                        </div>
-                        @foreach($photos as $photo)
-                            <div class="col-md-6">
-                                <div class="photos-list-item">
-                                    <a href="{{ route('photos.show', $photo->id) }}">
-                                        <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
-                                    </a>
-                                    <a href="{{ route('photos.show', $photo->id) }}"><h3>{{ $photo->title }}</h3></a>
-                                </div>
-                            </div>
-                        @endforeach
+
+                    <div class="col-md-12 hidden-sm hidden-xs area-title">
+                        <h3>ئۇز رەسىم </h3>
                     </div>
+                    @foreach($photos as $photo)
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="photos-list-item">
+                                <a href="{{ route('photos.show', $photo->id) }}">
+                                    <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
+                                </a>
+                                <a href="{{ route('photos.show', $photo->id) }}"><h3>{{ $photo->title }}</h3></a>
+                            </div>
+                        </div>
+                    @endforeach
 
                 </div>
 
