@@ -35,92 +35,69 @@
 
         </div>
         <div class="row">
-            <div class="col-md-8 col-xs-12 right-area">
-                <div class="video-list">
+            <div class="col-md-8">
+                <div class="container-fluid" style="padding-right: 15px;padding-left: 15px;">
                     <div class="area-title hidden-xs hidden-sm">
                         <h3>يېڭى يازمىلار</h3>
                     </div>
-                    <ul>
-                        @foreach( $posts as  $post)
-                            <li>
-                                <div class="row">
-                                    <div class="col-md-4 col-sm-4 col-xs-12 video-img">
-                                        <a href="{{ route('articles.show', $post->id) }}">
-                                            <img src="{{ asset($post->thumb) }}" alt="" class="img-responsive">
-                                        </a>
-                                    </div>
-                                    <div class="col-md-8 col-sm-8 col-xs-12">
-                                        <div class="video-content">
-                                            <a href="{{ route('articles.show', $post->id) }}">
-                                                <h3>{{ $post->title }}</h3>
-                                            </a>
-                                            <div class="video-star">
-                                                <span class="color-warning"><i class="fa fa-star"></i></span>
-                                                <span class="color-warning"><i class="fa fa-star"></i></span>
-                                                <span class="color-warning"><i class="fa fa-star"></i></span>
-                                                <span class="color-warning"><i class="fa fa-star"></i></span>
-                                                <span><i class="fa fa-star"></i></span>
-                                                <span class="video-star">9.0</span>
-                                            </div>
-                                            <p class="hidden-xs">{{ $post->description }}</p>
-                                            <div class="video-info">
-                                            <span>
-                                                <i class="fa fa-clock-o"></i>
-                                                {{ Date::parse($post->updated_at)->diffForHumans(Date::now()) }}
-                                            </span>
-                                                <span>
-                                                <i class="fa fa-eye"></i>
-                                                    {{ $post->clicks }}
-                                            </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                        @endforeach
-                    </ul>
-                    {{--<div class="load-more hidden-xs">--}}
-                        {{--<button class="btn btn-outline-primary" style="margin: 0 auto;display: block">تېخىمۇ كۆپ ...--}}
-                        {{--</button>--}}
-                    {{--</div>--}}
+                    @foreach( $posts as  $post)
+                    <div class="row info-content">
+                        <div class="col-md-4 col-sm-4 col-xs-12">
+                            <a href="{{ route('articles.show', $post->id) }}">
+                                <img src="{{ asset($post->thumb) }}" class="img-responsive" alt="">
+                            </a>
+                        </div>
+                        <div class="col-md-8 col-sm-8 col-xs-12">
+                            <h4><a href="{{ route('articles.show', $post->id) }}">{{ $post->title }}</a></h4>
+                            <p class="hidden-xs">
+                                {{ $post->description }}
+                            </p>
+                            <div class="content-status">
+                                <span><i class="fa fa-clock-o"></i>&nbsp;{{ Date::parse($post->updated_at)->diffForHumans(Date::now()) }}</span>
+                                <span><i class="fa fa-eye"></i>&nbsp;{{ $post->clicks }}</span>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-md-4 left-area">
-                <div class="row">
-                    <div class="lf-filghet" style="margin-bottom: 20px;overflow: hidden;" >
+                <div class="container-fluid" style="padding-right: 15px;padding-left: 15px;">
+                    <div class="row">
+                        <div class="lf-filghet" style="margin-bottom: 20px;overflow: hidden;" >
 
-                        <div class="col-md-12 area-title hidden-sm hidden-xs">
-                            <h3>يېڭى سۆزلۈك </h3>
-                        </div>
+                            <div class="col-md-12 area-title hidden-sm hidden-xs">
+                                <h3>يېڭى سۆزلۈك </h3>
+                            </div>
 
-                        <div class="col-md-12 tags-list">
-                            @foreach($filghets as $k=>$filghet)
-                                @php
-                                    $colors = ['btn-primary', 'btn-danger', 'btn-info', 'btn-pink', 'btn-warning', 'btn-success'];
-                                @endphp
-                                <a href="{{ route('filghetes.show', $filghet->id) }}" class="btn {{$colors[$k]}}">
-                                    <span>{{ $filghet->ug }}</span>
-                                </a>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="col-md-12 hidden-sm hidden-xs area-title">
-                        <h3>ئۇز رەسىم </h3>
-                    </div>
-                    @foreach($photos as $photo)
-                        <div class="col-md-6 col-sm-6 col-xs-12">
-                            <div class="photos-list-item">
-                                <a href="{{ route('photos.show', $photo->id) }}">
-                                    <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
-                                </a>
-                                <a href="{{ route('photos.show', $photo->id) }}"><h3>{{ $photo->title }}</h3></a>
+                            <div class="col-md-12 tags-list">
+                                @foreach($filghets as $k=>$filghet)
+                                    @php
+                                        $colors = ['btn-primary', 'btn-danger', 'btn-info', 'btn-pink', 'btn-warning', 'btn-success'];
+                                    @endphp
+                                    <a href="{{ route('filghetes.show', $filghet->id) }}" class="btn {{$colors[$k]}}">
+                                        <span>{{ $filghet->ug }}</span>
+                                    </a>
+                                @endforeach
                             </div>
                         </div>
-                    @endforeach
 
+                        <div class="col-md-12 hidden-sm hidden-xs area-title">
+                            <h3>ئۇز رەسىم </h3>
+                        </div>
+                        @foreach($photos as $photo)
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="photos-list-item">
+                                    <a href="{{ route('photos.show', $photo->id) }}">
+                                        <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
+                                    </a>
+                                    <a href="{{ route('photos.show', $photo->id) }}"><h3>{{ $photo->title }}</h3></a>
+                                </div>
+                            </div>
+                        @endforeach
+
+                    </div>
                 </div>
-
             </div>
         </div>
     </div>

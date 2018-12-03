@@ -3992,3 +3992,41 @@ body {
           box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
+.info-content {
+  background-color: #fff;
+  margin-bottom: 30px;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+  padding: 10px 4px;
+}
+
+.info-content h4 {
+  height: 24px;
+  line-height: 24px;
+  font-size: 16px;
+  font-weight: normal;
+  margin: 5px 0 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.info-content h4 a {
+  color: #333333;
+}
+
+.info-content h4 a:hover {
+  color: #2d8cf0;
+}
+
+.info-content p {
+  margin: 10px 0;
+  line-height: 24px;
+}
+
+.info-content .content-status span {
+  color: #98a6ad;
+  float: right;
+  margin-left: 20px;
+}
+
