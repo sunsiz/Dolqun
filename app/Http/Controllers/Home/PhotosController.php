@@ -13,7 +13,7 @@ class PhotosController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['index', 'show']
+            'except' => ['index', 'show', 'list']
         ]);
     }
 
@@ -21,6 +21,12 @@ class PhotosController extends Controller
     {
         $photos = Photo::orderBy('id', 'DESC')->paginate(10);
         return view('photos.index', compact('photos'));
+    }
+
+    public function list()
+    {
+        $photos = Photo::orderBy('id', 'DESC')->paginate(16);
+        return view('photos.list', compact('photos'));
     }
 
     public function create()
@@ -73,11 +79,11 @@ class PhotosController extends Controller
     public function thumb(Request $request)
     {
         $file = $request->file('img');
-        $filename = md5(time()).'.'.$file->getClientOriginalExtension();
+        $filename = md5(time()) . '.' . $file->getClientOriginalExtension();
 
         $file->move(public_path('thumbs'), $filename);
 
-        return response()->json(['url' => '/thumbs/'.$filename]);
+        return response()->json(['url' => '/thumbs/' . $filename]);
     }
 
     public function destroy(Photo $photo)

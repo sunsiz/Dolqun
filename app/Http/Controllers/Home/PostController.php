@@ -14,14 +14,20 @@ class PostController extends Controller
     public function __construct()
     {
         $this->middleware('auth', [
-            'except' => ['index', 'show']
+            'except' => ['index', 'show', 'list']
         ]);
     }
 
     public function index()
     {
         $posts = Post::orderBy('id', 'DESC')->paginate(10);
-        return view('posts.index', compact('posts'));
+        return view('posts.list', compact('posts'));
+    }
+
+    public function list()
+    {
+        $posts = Post::orderBy('id', 'DESC')->paginate(10);
+        return view('posts.list', compact('posts'));
     }
 
     public function create()

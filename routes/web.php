@@ -37,10 +37,12 @@ Route::namespace('Home')->group(function () {
 
     //文章
     Route::resource('posts', 'PostController');
+    Route::get('post/list', 'PostController@list')->name('post.list');
     Route::resource('articles', 'ArticleController');
     Route::resource('qamus', 'QamusController');
     Route::resource('filghetes', 'FilghetesController');
     Route::resource('photos', 'PhotosController');
+    Route::get('photo/list', 'PhotosController@list')->name('photo.list');
     Route::post('photo_thumb', 'PhotosController@thumb')->name('photos.thumb');
     Route::post('thumb', 'ArticleController@thumb')->name('article.thumb');
     Route::get('search/{type?}/{keywords?}', 'SearchController@index')->name('search');
