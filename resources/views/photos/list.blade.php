@@ -3,15 +3,8 @@
 @section('content')
     <div class="col-md-12">
         <div class="row">
-            <div class="page-header">
-                <h3>
-                    <span>ھالقىلىق سۆز</span>
-                    <span class="text-pink">{{ $keywords }}</span>
-                </h3>
-            </div>
-
             @foreach($photos as $photo)
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="photos-list-item">
                         <a href="{{ route('photos.show', $photo->id) }}">
                             <img src="{{ asset($photo->thumb) }}" alt="" class="img-responsive">
@@ -20,7 +13,9 @@
                     </div>
                 </div>
             @endforeach
-
+            <div class="col-md-12">
+                {{ $photos->render() }}
+            </div>
         </div>
     </div>
 @stop
