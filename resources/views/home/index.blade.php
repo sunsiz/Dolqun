@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                         @endforeach
-                        @if(count($posts) >=2)
+                        @if(count($posts) >=10)
                             <div class="col-md-12" style="text-align: center;margin-bottom: 30px;">
                                 <a href="{{ route('post.list') }}" class="btn btn-outline-primary">تېخىمۇ كۆپ
                                     يازمىلار</a>
