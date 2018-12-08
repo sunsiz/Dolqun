@@ -52,6 +52,7 @@ class PostController extends Controller
             'slug' => '',
             'description' => $request->get('description'),
             'body' => $request->get('body'),
+            'thumb' => $request->get('thumb'),
             'status' => $request->get('status'),
             'user_id' => Auth::user()->id,
             'author' => Auth::user()->name,
@@ -60,7 +61,7 @@ class PostController extends Controller
         $post->update($data);
 
         session()->flash('success', 'يازما تەھرىرلەش غەلبىلىك بولدى');
-        return redirect()->route('posts.index');
+        return redirect()->route('articles.index');
 
     }
 
