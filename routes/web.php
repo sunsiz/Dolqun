@@ -46,7 +46,5 @@ Route::namespace('Home')->group(function () {
     Route::post('photo_thumb', 'PhotosController@thumb')->name('photos.thumb');
     Route::post('thumb', 'ArticleController@thumb')->name('article.thumb');
     Route::get('search/{type?}/{keywords?}', 'SearchController@index')->name('search');
-    //标签
-    //Route::resource('tag', 'TagController');
 
 });
