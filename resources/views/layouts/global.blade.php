@@ -64,6 +64,25 @@
             </div>
         </div>
     </div>
+    <div class="container-fluid footer">
+        <div class="container">
+            <p>
+                دولقۇن تەرجىمىلىرى | DolqunSub
+            </p>
+            <p class="hidden-xs">
+                All Rights Reserved Dolqun.Net ©2016-2019 粤ICP备18109943号-1
+                <br>
+                深圳市理念文化传媒有限公司
+            </p>
+            <p class="hidden-lg hidden-md hidden-sm">
+                All Rights Reserved Dolqun.Net
+                <br>
+                ©2016-2019 粤ICP备18109943号-1
+                <br>
+                深圳市理念文化传媒有限公司
+            </p>
+        </div>
+    </div>
 </div>
 <script src="{{ mix('js/app.js') }}"></script>
 @yield('scripts')

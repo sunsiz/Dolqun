@@ -3597,6 +3597,7 @@ code {
 
 body {
   background: #f8f8f9;
+  padding: 0;
 }
 
 .container-fluid {
@@ -3928,14 +3929,14 @@ body {
 }
 
 .searchForm {
-  margin: 50px 0;
+  margin: 70px 0;
   position: relative;
 }
 
 .searchForm input {
   height: 40px;
   width: 100%;
-  padding-right: 60px;
+  padding-right: 50px;
   outline: none;
 }
 
@@ -4028,5 +4029,16 @@ body {
   color: #98a6ad;
   float: right;
   margin-left: 20px;
+}
+
+.footer {
+  min-height: 160px;
+  width: 100%;
+  margin: 80px 0 -15px 0;
+  background-image: -webkit-linear-gradient(0deg, #007eff, #5050f0);
+  color: #fff;
+  line-height: 26px;
+  text-align: center;
+  padding: 40px;
 }
 

@@ -7,7 +7,7 @@
                 <button type="submit" class="btn izdesh">ئ‍ىزدەش</button>
                 <input type="hidden" name="type" value="posts" id="searchType">
                 <input type="text" class="" name="keywords"
-                       placeholder="ھالقىلىق سۆزنى كىرگۈزۈپ ئىزدەڭ...">
+                       placeholder="ھالقىلىق سۆزنى كىرگۈزۈڭ...">
                 <ul class="searchType">
                     <h3><i class="fa fa-angle-down"></i> <span>مەزمۇن</span></h3>
                     <li data-value="filghetes">فىلغەت</li>

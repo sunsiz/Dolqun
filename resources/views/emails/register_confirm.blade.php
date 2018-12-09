@@ -5,7 +5,7 @@
     <title>注册确认链接</title>
 </head>
 <body>
-<h1>感谢您在【Dolqun Terjimiliri】上进行注册！</h1>
+<h1>感谢您在【Dolqun|蓝浪字幕组】上进行注册！</h1>
 <p>
     请点击下面的链接完成注册：
     <a href="{{ route('confirmEmail', $user->activation_token) }}">
