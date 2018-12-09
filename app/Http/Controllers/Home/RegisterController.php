@@ -33,10 +33,10 @@ class RegisterController extends Controller
         ]);
 
         //发送激活邮件
-        //$this->sendAccountConfirmationEmailTo($user);
-        Auth::login($user);
+        $this->sendAccountConfirmationEmailTo($user);
+
         session()->flash('success', 'تېزىملاشنى تەستىقلاش ئۇلانمىسى سىز تولدۇرغان ئېلخەتكە يوللاندى ، ئېلخەتكە كىرىپ ئۇلانمىنى چىكىپ داۋاملاشتۇرۇڭ!');
-        return redirect()->back();
+        return redirect()->route('home');
     }
 
     protected function sendAccountConfirmationEmailTo($user)
@@ -44,7 +44,7 @@ class RegisterController extends Controller
         $view = 'emails.register_confirm';
         $data = compact('user');
         $to = $user->email;
-        $subject = "感谢注册[Dolqun Terjimiliri],请确认你的邮箱。";
+        $subject = "感谢注册[Dolqun|蓝浪字幕组],请确认你的邮箱。";
         Mail::send($view, $data, function ($message) use ($to, $subject) {
             $message->to($to)->subject($subject);
         });
