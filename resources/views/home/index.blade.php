@@ -10,8 +10,9 @@
                        placeholder="ھالقىلىق سۆزنى كىرگۈزۈڭ...">
                 <ul class="searchType">
                     <h3><i class="fa fa-angle-down"></i> <span>مەزمۇن</span></h3>
-                    <li data-value="filghetes">فىلغەت</li>
-                    <li data-value="photos">رەسىم</li>
+                    <li data-value="posts" style="height: 20px;line-height: 20px;font-size: 12px;">مەزمۇن</li>
+                    <li data-value="filghetes" style="height: 20px;line-height: 20px;font-size: 12px;">فىلغەت</li>
+                    <li data-value="photos" style="height: 20px;line-height: 20px;font-size: 12px;">رەسىم</li>
                 </ul>
             </div>
         </form>
@@ -160,7 +161,8 @@
                 var searchType = $(this).attr('data-value');
                 var searchText = $(this).text();
                 $('.searchType h3 span').text(searchText);
-                $('#searchType').attr('value', searchType)
+                $('#searchType').attr('value', searchType);
+                $('#searchType').hide();
             });
         })
     </script>
