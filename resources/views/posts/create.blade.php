@@ -32,8 +32,17 @@
                                     </span>
                                 @endif
                             </div>
-                            <div class="form-group">
-                                <thumb avatar=""></thumb>
+                            {{--<div class="form-group">--}}
+                                {{--<thumb avatar=""></thumb>--}}
+                            {{--</div>--}}
+
+                            <div class="form-group {{ $errors->has('thumb') ? 'has-error' : '' }}">
+                                <input type="text" class="form-control"  placeholder="مۇقاۋا رەسىم (چوقۇم يازىسىز)" name="thumb" value="{{ old('thumb') }}">
+                                @if ($errors->has('thumb'))
+                                    <span class="text-danger">
+                                        <strong>{{ $errors->first('thumb') }}</strong>
+                                    </span>
+                                @endif
                             </div>
 
                             <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
