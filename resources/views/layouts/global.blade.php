@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
     <title>Dolqun|دولقۇن تەرجىمىلىرى</title>
-
     <!-- Bootstrap -->
     <link href="{{ asset('css/bootstrap-3.3.7/css/bootstrap.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/bootstrap-3.3.7/css/bootstrap-rtl.css') }}">
@@ -25,7 +24,6 @@
 <div id="app">
     {{--@include('layouts/navbar')--}}
     <div class="container-fluid lf-header">
-        {{--<img src="{{ asset('images/logo-background.png') }}" alt="">--}}
         <div class="container p-logo">
             <div class="row">
                 <div class="col-md-4" style="padding-top: 20px;">
