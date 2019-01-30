@@ -33929,9 +33929,9 @@ var render = function() {
       _c("my-upload", {
         attrs: {
           field: "img",
-          width: 480,
-          height: 320,
-          url: "/photo_thumb",
+          width: 300,
+          height: 300,
+          url: "/album_thumb",
           params: _vm.params,
           headers: _vm.headers,
           "img-format": "png",

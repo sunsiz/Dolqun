@@ -20,6 +20,7 @@
                             <li role="presentation"><a href="{{ route('filghetes.create') }}"><i class="fa fa-language"></i> فىلغەت</a></li>
                             <li role="presentation"><a href="{{ route('qamus.create') }}" ><i class="fa fa-globe"></i> قامۇس</a></li>
                             <li role="presentation"><a href="{{ route('photos.create') }}"><i class="fa fa-image"></i> رەسىم</a></li>
+                            <li role="presentation"><a href="{{ route('album.index') }}"><i class="fa fa-video-camera"></i> فىلغەت بوغچىسى</a></li>
                         </ul>
 
                         <form action="{{ route('posts.update', $post->id) }}" method="post">
