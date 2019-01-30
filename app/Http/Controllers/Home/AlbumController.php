@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Http\Requests\AlbumRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -24,7 +25,7 @@ class AlbumController extends Controller
         return view('albums.create');
     }
 
-    public function store()
+    public function store(AlbumRequest $request)
     {
         
     }
