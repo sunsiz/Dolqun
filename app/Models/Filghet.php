@@ -11,4 +11,12 @@ class Filghet extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['id', 'ug', 'zh', 'other', 'description'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function albums()
+    {
+        return $this->belongsToMany(Album::class, 'filghet_album')->withTimestamps();
+    }
 }

@@ -40,19 +40,24 @@
                             <tbody>
                             @foreach( $albums as $album)
                                 <tr>
-                                    <th>{{ $album->id }}</th>
+                                    <th><br>{{ $album->id }}</th>
                                     <th><img src="{{ asset($album->thumb) }}" class="img-rounded" height="60"></th>
-                                    <td>
-                                        <a href="#">{{ $album->name_ug }}</a>
+                                    <th>
+                                        <a href="#" style="font-size: 14px;">{{ $album->name_ug }}</a>
                                         <br>
                                         <span class="text-muted" style="font-size: 10px;">
                                             يوللانغان ۋاقىت :
                                             {{ Date::parse($album->created_at)->diffForHumans(Date::now()) }}
                                         </span>
-                                    </td>
-                                    <td>
-                                        <a href="#">{{ $album->name_zh }}</a>
-                                    </td>
+                                    </th>
+                                    <th>
+                                        <a href="#" style="font-size: 14px;">{{ $album->name_zh }}</a>
+                                        <br>
+                                        <span class="text-muted" style="font-size: 10px;">
+                                            فىلغەت سانى :
+                                            {{ $album->filghets->count() }}
+                                        </span>
+                                    </th>
                                     <th>
                                         <!-- Single button -->
                                         <div class="btn-group">

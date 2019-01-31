@@ -55,6 +55,20 @@
                                 @endif
                             </div>
 
+                            <div class="form-group">
+                                <span class="text-muted">فىلغەت بوغچىسى تاللاڭ (تولدۇرمىسىڭىزمۇ ئىختىيارىڭىز)</span>
+                                <br><br>
+                                @foreach($albums as $album)
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="{{ $album->id }}" name="albums[]"
+                                       @if(in_array($album->id, $filghetAlbums))
+                                       checked
+                                        @endif
+                                        >  {{ $album->name_ug }}
+                                    </label>
+                                @endforeach
+                            </div>
+
                             <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
                                 <textarea  class="form-control"  placeholder="ئىزاھات" name="description" rows="4">{{ $filghet->description }}</textarea>
                                 @if ($errors->has('description'))
