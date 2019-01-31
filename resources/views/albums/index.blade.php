@@ -31,40 +31,44 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>مۇقاۋا رەسىم</th>
                                 <th>ئۇيغۇرچە نامى</th>
                                 <th>خەنزۇچە نامى</th>
                                 <th>مەشخۇلات</th>
                             </tr>
                             </thead>
                             <tbody>
-                            {{--@foreach( $photos as  $photo)--}}
-                                {{--<tr>--}}
-                                    {{--<th>{{ $photo->id }}</th>--}}
-                                    {{--<th><img src="{{ asset($photo->thumb) }}" class="img-rounded" height="60"></th>--}}
-                                    {{--<td>--}}
-                                        {{--<a href="{{ route('photos.show', $photo->id) }}">{{ $photo->title }}</a>--}}
-                                        {{--<br>--}}
-                                        {{--<span class="text-muted" style="font-size: 10px;">--}}
-                                            {{--يوللانغان ۋاقىت--}}
-                                            {{--{{ Date::parse($photo->created_at)->diffForHumans(Date::now()) }}--}}
-                                        {{--</span>--}}
-                                    {{--</td>--}}
-                                    {{--<th>--}}
-                                        {{--<!-- Single button -->--}}
-                                        {{--<div class="btn-group">--}}
-                                            {{--<a href="{{ route('photos.edit', $photo->id) }}" class="btn btn-info btn-sm">تەھرىرلەش</a>--}}
-                                            {{--<form action="{{ route('photos.destroy', $photo->id) }}" method="post" style="display: inline">--}}
-                                                {{--{{ method_field('DELETE') }}--}}
-                                                {{--{{ csrf_field() }}--}}
-                                                {{--<button class="btn btn-danger btn-sm" type="submit">ئ‍ۆچۈرۈش</button>--}}
-                                            {{--</form>--}}
-                                        {{--</div>--}}
-                                    {{--</th>--}}
-                                {{--</tr>--}}
-                            {{--@endforeach--}}
+                            @foreach( $albums as $album)
+                                <tr>
+                                    <th>{{ $album->id }}</th>
+                                    <th><img src="{{ asset($album->thumb) }}" class="img-rounded" height="60"></th>
+                                    <td>
+                                        <a href="#">{{ $album->name_ug }}</a>
+                                        <br>
+                                        <span class="text-muted" style="font-size: 10px;">
+                                            يوللانغان ۋاقىت :
+                                            {{ Date::parse($album->created_at)->diffForHumans(Date::now()) }}
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <a href="#">{{ $album->name_zh }}</a>
+                                    </td>
+                                    <th>
+                                        <!-- Single button -->
+                                        <div class="btn-group">
+                                            <a href="{{ route('album.edit', $album->id) }}" class="btn btn-info btn-sm">تەھرىرلەش</a>
+                                            <form action="{{ route('album.destroy', $album->id) }}" method="post" style="display: inline">
+                                                {{ method_field('DELETE') }}
+                                                {{ csrf_field() }}
+                                                <button class="btn btn-danger btn-sm" type="submit">ئ‍ۆچۈرۈش</button>
+                                            </form>
+                                        </div>
+                                    </th>
+                                </tr>
+                            @endforeach
                             </tbody>
                         </table>
-                        {{--{{ $photos->links() }}--}}
+                        {{ $albums->links() }}
                     </div>
                 </div>
             </div>
