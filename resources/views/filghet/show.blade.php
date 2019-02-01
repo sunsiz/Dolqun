@@ -46,7 +46,7 @@
                                 ئىزاھات
                             </span>
                         </h5>
-                        <h5>
+                        <h5 style="line-height: 24px;">
                             {{ $filghet->description }}
                         </h5>
                     </div>
