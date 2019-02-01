@@ -47,4 +47,8 @@ Route::namespace('Home')->group(function () {
     Route::post('thumb', 'ArticleController@thumb')->name('article.thumb');
     Route::get('search/{type?}/{keywords?}', 'SearchController@index')->name('search');
 
+    //video-album
+    Route::resource('album', 'AlbumController');
+    Route::post('album_thumb', 'AlbumController@thumb')->name('album.thumb');
+
 });

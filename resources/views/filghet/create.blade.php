@@ -20,10 +20,12 @@
                             <li role="presentation" class="active"><a href="{{ route('filghetes.create') }}"><i class="fa fa-language"></i> فىلغەت</a></li>
                             <li role="presentation"><a href="{{ route('qamus.create') }}" ><i class="fa fa-globe"></i> قامۇس</a></li>
                             <li role="presentation"><a href="{{ route('photos.create') }}"><i class="fa fa-image"></i> رەسىم</a></li>
+                            <li role="presentation"><a href="{{ route('album.index') }}"><i class="fa fa-video-camera"></i> فىلغەت بوغچىسى</a></li>
                         </ul>
 
                         <form action="{{ route('filghetes.store') }}" method="post">
                             {{ csrf_field() }}
+
                             <div class="form-group {{ $errors->has('ug') ? 'has-error' : '' }}">
                                 <input type="text" class="form-control"  placeholder="ئۇيغۇرچە ئاتىلىشى" name="ug" value="{{ old('ug') }}">
                                 @if ($errors->has('ug'))
@@ -49,6 +51,16 @@
                                         <strong>{{ $errors->first('other') }}</strong>
                                     </span>
                                 @endif
+                            </div>
+
+                            <div class="form-group">
+                                <span class="text-muted">فىلغەت بوغچىسى تاللاڭ (تولدۇرمىسىڭىزمۇ ئىختىيارىڭىز)</span>
+                                <br><br>
+                                @foreach($albums as $album)
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" value="{{ $album->id }}" name="albums[]" >  {{ $album->name_ug }}
+                                    </label>
+                                @endforeach
                             </div>
 
                             <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">

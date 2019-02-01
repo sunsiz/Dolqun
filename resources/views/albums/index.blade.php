@@ -19,37 +19,50 @@
                             <li role="presentation"><a href="{{ route('posts.create') }}"><i class="fa fa-align-center"></i> مەزمۇن</a></li>
                             <li role="presentation"><a href="{{ route('filghetes.create') }}"><i class="fa fa-language"></i> فىلغەت</a></li>
                             <li role="presentation"><a href="{{ route('qamus.create') }}" ><i class="fa fa-globe"></i> قامۇس</a></li>
-                            <li role="presentation" class="active"><a href="{{ route('photos.create') }}"><i class="fa fa-image"></i> رەسىم</a></li>
-                            <li role="presentation"><a href="{{ route('album.index') }}"><i class="fa fa-video-camera"></i> فىلغەت بوغچىسى</a></li>
+                            <li role="presentation"><a href="{{ route('photos.create') }}"><i class="fa fa-image"></i> رەسىم</a></li>
+                            <li role="presentation" class="active"><a href="{{ route('album.index') }}"><i class="fa fa-video-camera"></i> فىلغەت بوغچىسى</a></li>
                         </ul>
+
+                        <div class="form-group">
+                            <a href="{{ route('album.create') }}" class="btn btn-primary btn-sm">بوغچا قوشۇش</a>
+                        </div>
 
                         <table class="table table-hover">
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>THUMB</th>
-                                <th>يازما ماۋزۇسى</th>
+                                <th>مۇقاۋا رەسىم</th>
+                                <th>ئۇيغۇرچە نامى</th>
+                                <th>خەنزۇچە نامى</th>
                                 <th>مەشخۇلات</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach( $photos as  $photo)
+                            @foreach( $albums as $album)
                                 <tr>
-                                    <th>{{ $photo->id }}</th>
-                                    <th><img src="{{ asset($photo->thumb) }}" class="img-rounded" height="60"></th>
-                                    <td>
-                                        <a href="{{ route('photos.show', $photo->id) }}">{{ $photo->title }}</a>
+                                    <th><br>{{ $album->id }}</th>
+                                    <th><img src="{{ asset($album->thumb) }}" class="img-rounded" height="60"></th>
+                                    <th>
+                                        <a href="#" style="font-size: 14px;">{{ $album->name_ug }}</a>
                                         <br>
                                         <span class="text-muted" style="font-size: 10px;">
-                                            يوللانغان ۋاقىت
-                                            {{ Date::parse($photo->created_at)->diffForHumans(Date::now()) }}
+                                            يوللانغان ۋاقىت :
+                                            {{ Date::parse($album->created_at)->diffForHumans(Date::now()) }}
                                         </span>
-                                    </td>
+                                    </th>
+                                    <th>
+                                        <a href="#" style="font-size: 14px;">{{ $album->name_zh }}</a>
+                                        <br>
+                                        <span class="text-muted" style="font-size: 10px;">
+                                            فىلغەت سانى :
+                                            {{ $album->filghets->count() }}
+                                        </span>
+                                    </th>
                                     <th>
                                         <!-- Single button -->
                                         <div class="btn-group">
-                                            <a href="{{ route('photos.edit', $photo->id) }}" class="btn btn-info btn-sm">تەھرىرلەش</a>
-                                            <form action="{{ route('photos.destroy', $photo->id) }}" method="post" style="display: inline">
+                                            <a href="{{ route('album.edit', $album->id) }}" class="btn btn-info btn-sm">تەھرىرلەش</a>
+                                            <form action="{{ route('album.destroy', $album->id) }}" method="post" style="display: inline">
                                                 {{ method_field('DELETE') }}
                                                 {{ csrf_field() }}
                                                 <button class="btn btn-danger btn-sm" type="submit">ئ‍ۆچۈرۈش</button>
@@ -60,7 +73,7 @@
                             @endforeach
                             </tbody>
                         </table>
-                        {{ $photos->links() }}
+                        {{ $albums->links() }}
                     </div>
                 </div>
             </div>
