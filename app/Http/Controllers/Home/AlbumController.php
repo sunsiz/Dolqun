@@ -42,6 +42,11 @@ class AlbumController extends Controller
         return redirect()->route('album.index');
     }
 
+    public function show(Album $album)
+    {
+        return view('albums.show', compact('album'));
+    }
+
     public function edit(Album $album)
     {
         return view('albums.edit', compact('album'));
