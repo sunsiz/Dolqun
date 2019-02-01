@@ -56,3 +56,7 @@ if (token) {
 //     cluster: 'mt1',
 //     encrypted: true
 // });
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})

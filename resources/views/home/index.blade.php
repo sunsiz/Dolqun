@@ -96,7 +96,7 @@
                         <div class="col-md-12 tags-list">
                             @foreach($albums as $album)
                                 <a href="{{ route('album.show', $album->id) }}">
-                                    <img src="{{ $album->thumb }}" alt="" class="img-responsive" style="height: 60px;width: 60px;display: inline-block;">
+                                    <img src="{{ $album->thumb }}" alt="" class="img-responsive" style="height: 60px;width: 60px;display: inline-block;border-radius: 3px;" data-toggle="tooltip" data-placement="top" title="{{ $album->name_ug }}">
                                 </a>
                             @endforeach
                         </div>
