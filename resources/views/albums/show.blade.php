@@ -19,16 +19,11 @@
                         </span>
                     </h5>
                 </div>
+                <div class="panel-heading" style="border-bottom: none">
                 @foreach($album->filghets as $filghet)
-                    <div class="panel-heading" style="border-bottom: none">
-                        <a href="{{ route('filghetes.show', $filghet->id) }}" class="btn btn-default"> {{ $filghet->ug }}</a>
-                        {{--<h4>--}}
-                            {{--<span class="text-muted" style="font-size: 14px;">--}}
-                            {{--{{ $filghet->zh }}--}}
-                            {{--</span>--}}
-                        {{--</h4>--}}
-                    </div>
+                    <a href="{{ route('filghetes.show', $filghet->id) }}" class="btn btn-default"> {{ $filghet->ug }}</a>
                  @endforeach
+                </div>
             </div>
         </div>
     </div>
