@@ -86,6 +86,22 @@
         <div class="col-md-4 left-area">
             <div class="container-fluid" style="padding-right: 15px;padding-left: 15px;">
                 <div class="row">
+
+                    <div class="lf-filghet" style="margin-bottom: 20px;overflow: hidden;">
+
+                        <div class="col-md-12 area-title hidden-sm hidden-xs">
+                            <h3> فىلغەت بوغچىسى </h3>
+                        </div>
+
+                        <div class="col-md-12 tags-list">
+                            @foreach($albums as $album)
+                                <a href="{{ route('album.show', $album->id) }}">
+                                    <img src="{{ $album->thumb }}" alt="" class="img-responsive" style="height: 60px;width: 60px;display: inline-block;border-radius: 3px;" data-toggle="tooltip" data-placement="top" title="{{ $album->name_ug }}">
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+
                     <div class="lf-filghet" style="margin-bottom: 20px;overflow: hidden;">
 
                         <div class="col-md-12 area-title hidden-sm hidden-xs">

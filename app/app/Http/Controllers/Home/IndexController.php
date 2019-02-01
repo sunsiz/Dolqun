@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Models\Album;
 use App\Models\Filghet;
 use App\Models\Photo;
 use App\Models\Post;
@@ -17,7 +18,9 @@ class IndexController extends Controller
 
         $filghets = Filghet::orderBy('id', 'DESC')->take(6)->get();
 
-        return view('home.index', compact('posts', 'photos', 'filghets'));
+        $albums = Album::orderBy('id', 'DESC')->take(8)->get();
+
+        return view('home.index', compact('posts', 'photos', 'filghets', 'albums'));
     }
 
     public function download()

@@ -45991,6 +45991,10 @@ if (token) {
 //     encrypted: true
 // });
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip();
+});
+
 /***/ }),
 
 /***/ "./resources/assets/js/components/Avatar.vue":
