@@ -21,7 +21,7 @@
                 </div>
                 <div class="panel-heading" style="border-bottom: none">
                 @foreach($album->filghets as $filghet)
-                    <a href="{{ route('filghetes.show', $filghet->id) }}" class="btn btn-default"> {{ $filghet->ug }}</a>
+                    <a href="{{ route('filghetes.show', $filghet->id) }}" class="btn btn-default" style="margin-bottom: 3px;"> {{ $filghet->ug }}</a>
                  @endforeach
                 </div>
             </div>
