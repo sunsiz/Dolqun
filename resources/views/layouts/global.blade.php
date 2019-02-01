@@ -43,8 +43,8 @@
                         </div>
                     @else
                         <div class="noLogin">
-                            <a href="{{ route('login') }}">[ كىرىش ]</a> |
-                            <a href="{{ route('register') }}">[ تېزىملىتىش ]</a>
+                            <a href="{{ route('login') }}">[ كىرىش ]</a>
+                            {{--<a href="{{ route('register') }}">[ تېزىملىتىش ]</a>--}}
                         </div>
 
                     @endauth
