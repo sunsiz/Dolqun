@@ -3398,6 +3398,7 @@ a:hover {
 .btn-outline-pink {
   color: #ff679b;
   border-color: #ff679b;
+  border-radius: 30px;
 }
 
 .btn-outline-pink:hover {
