@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Home;
 
+use App\Models\Category;
 use App\Models\Photo;
 use Auth;
 use App\Models\Post;
@@ -32,7 +33,8 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('posts.create');
+        $categorys = Category::all();
+        return view('posts.create', compact('categorys'));
     }
 
     public function show(Post $post)
@@ -42,7 +44,8 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        return view('posts.edit', compact('post'));
+        $categorys = Category::all();
+        return view('posts.edit', compact('post', 'categorys'));
     }
 
     public function update(PostRequest $request, Post $post)
@@ -54,6 +57,7 @@ class PostController extends Controller
             'body' => $request->get('body'),
             'thumb' => $request->get('thumb'),
             'status' => $request->get('status'),
+            'category_id' => $request->get('category_id'),
             'user_id' => Auth::user()->id,
             'author' => Auth::user()->name,
         ];

@@ -26,6 +26,22 @@
                         <form action="{{ route('posts.update', $post->id) }}" method="post">
                             {{ method_field('PATCH') }}
                             {{ csrf_field() }}
+
+                            <div class="form-group">
+                                <select class="form-control" name="category_id">
+                                    <option value="0">== كاتىگورىيە تاللاڭ ==</option>
+                                    @foreach($categorys as $item)
+                                        <option value="{{ $item->id }}"
+                                                @if($post->category_id == $item->id)
+                                                selected
+                                                @endif
+                                        >
+                                            {{ $item->name }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                             <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                                 <input type="text" class="form-control"  placeholder="ماۋزۇ (چوقۇم يازىسىز)" name="title" value="{{ $post->title }}">
                                 @if ($errors->has('title'))

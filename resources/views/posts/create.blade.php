@@ -25,6 +25,16 @@
 
                         <form action="{{ route('articles.store') }}" method="post">
                             {{ csrf_field() }}
+
+                            <div class="form-group">
+                                <select class="form-control" name="category_id">
+                                    <option value="0">== كاتىگورىيە تاللاڭ ==</option>
+                                    @foreach($categorys as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
                             <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
                                 <input type="text" class="form-control"  placeholder="ماۋزۇ (چوقۇم يازىسىز)" name="title" value="{{ old('title') }}">
                                 @if ($errors->has('title'))

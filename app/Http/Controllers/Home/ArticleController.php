@@ -41,6 +41,7 @@ class ArticleController extends Controller
             'body' => $request->get('body'),
             'thumb' => $request->get('thumb'),
             'status' => $request->get('status'),
+            'category_id' => $request->get('category_id'),
             'user_id' => Auth::user()->id,
             'author' => Auth::user()->name,
         ]);
