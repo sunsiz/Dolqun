@@ -51,4 +51,7 @@ Route::namespace('Home')->group(function () {
     Route::resource('album', 'AlbumController');
     Route::post('album_thumb', 'AlbumController@thumb')->name('album.thumb');
 
+    //category
+    Route::resource('category', 'CategoryController');
+
 });
