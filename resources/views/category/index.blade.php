@@ -16,7 +16,7 @@
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="{{ route('category.index') }}"><i class="fa fa-align-center"></i> كاتىگورىيە باشقۇرۇش</a></li>
+                            <li role="presentation" class="active"><a href="{{ route('category.index') }}"><i class="fa fa-align-center"></i> سەھىپە باشقۇرۇش</a></li>
                             <li role="presentation"><a href="{{ route('category.create') }}"><i class="fa fa-plus"></i> يېڭىدىن قوشۇش</a></li>
                         </ul>
 

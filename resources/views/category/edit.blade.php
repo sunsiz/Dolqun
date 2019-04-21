@@ -16,7 +16,7 @@
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation"><a href="{{ route('category.index') }}"><i class="fa fa-align-center"></i> كاتىگورىيە باشقۇرۇش</a></li>
+                            <li role="presentation"><a href="{{ route('category.index') }}"><i class="fa fa-align-center"></i> سەھىپە باشقۇرۇش</a></li>
                             <li role="presentation" class="active"><a href=""><i class="fa fa-edit"></i> تەھرىرلەش </a></li>
                         </ul>
 
@@ -26,7 +26,7 @@
 
                             <div class="form-group">
                                 <select class="form-control" name="parent_id">
-                                    <option value="0">== ئانا كاتىگورىيە ==</option>
+                                    <option value="0">== ئانا سەھىپە ==</option>
                                     @foreach($categorys as $item)
                                         <option value="{{ $item->id }}"
                                             @if($category->parent_id == $item->id)

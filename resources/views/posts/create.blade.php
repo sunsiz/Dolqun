@@ -28,7 +28,7 @@
 
                             <div class="form-group">
                                 <select class="form-control" name="category_id">
-                                    <option value="0">== كاتىگورىيە تاللاڭ ==</option>
+                                    <option value="0">== سەھىپە تاللاڭ ==</option>
                                     @foreach($categorys as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
